@@ -1,0 +1,61 @@
+body {
+    padding: 70px 0px;   
+}
+
+.panel-default .panel-heading {
+    padding:10px 10px;
+}
+
+.panel-default .panel-heading h3{
+    padding: 0;
+    margin: 0;
+}
+
+.panel-default .panel-body{
+    padding:0;
+    margin:0;
+    background-color:black;
+    background-size: 100% auto;
+}
+
+.panel-default .panel-body .panel-item{
+    height:200px;
+}
+
+.no-border{
+    padding: 0;
+    margin: 0;
+}
+
+.center-y{
+    vertical-align:middle;
+    }
+.center-x{ 
+    text-align:center;
+    }
+    
+.center-outer{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.upvote-panel{
+	background-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0)), color-stop(0.636, rgba(0, 0, 0, 0.84)));
+	background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84) 63.6%);
+}
+
+.upvote-inner {
+    top: 40px;
+    position: absolute;
+}
+
+#map-canvas{
+    height:200px;
+}
