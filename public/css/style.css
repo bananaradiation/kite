@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 
-.panel-default .panel-body{
+.panel-default .activity-body{
     padding:0;
     margin:0;
     background-color:black;
@@ -20,6 +20,7 @@ body {
 
 .panel-default .panel-body .panel-item{
     height:200px;
+    margin-right: 0;
 }
 
 .no-border{

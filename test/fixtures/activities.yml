@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  loc_x: 9.99
+  loc_y: 9.99
+
+two:
+  name: MyString
+  description: MyString
+  loc_x: 9.99
+  loc_y: 9.99

@@ -4,17 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="apple-touch-icon-precomposed" href="img/icon.png"/>
-    <link rel="apple-touch-icon" href="img/icon.png"/>
-    <link rel="apple-touch-startup-image" href="img/splash.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon-precomposed" href="img/kite-icon-76@2x.png"/>
+    <link rel="apple-touch-icon" href="img/kite-icon-76@2x.png"/>
+    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone.png" />
+    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone5.png" sizes="640x1096">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="css/style.css">
-
+    
     <title>Kite</title>
 
     <!-- Bootstrap core CSS -->
@@ -46,30 +47,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img height="25px" src="img/kite.png"/> Kite</a>
+          <a class="navbar-brand" href="index.html"><img height="25px" src="img/kite.png"/> Kite</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top</a></li>
+            <li><a href="me">Me</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -92,19 +76,19 @@
                         <div class="container">
                           <!-- Main component for a primary marketing message or call to action -->
                             <div class="row">
-                                <div class="col-xs-12 col-md-4">
+                                <div class="col-xs-12 col-sm-12 col-md-4">
                                     <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h3>Hike to Potato Chip Rock</h3> 
                                             </div>
-                                    <div class="panel-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
-                                        <div class="container panel-item">
-                                            <div class="row no-border">
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
+                                        <div class="row panel-item">
+                                            <div>
                                                 <div class="col-xs-8 no-border panel-item">
                                                 </div>
                                                 <div class="col-xs-4 upvote-panel panel-item">
-                                                    <div class="container text-center upvote-inner">
-                                                        <div class="row">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
                                                             <div class="col-xs-12">
                                                                 <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
                                                             </div>
@@ -121,40 +105,37 @@
                                         </div>
                                         </div>
                                         <div class="panel-footer">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-xs-8">
+                                            <div class="row">
+                                                <div class="col-xs-12">
                                                         
-                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete...</p>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="activity.html" class="btn btn-info pull-right">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-                                                    </div>
+                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete. Bring lots of water because it can
+                                                        get really hot. There will be a big line at the top, and you will need to jump from one rock to another
+                                                            to get to the potatochip rock. When you see the antennas at the top, that means you are close.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
                                                 </div>   
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-4">
+                                <div class="col-xs-12 col-sm-12 col-md-4">
                                     <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h3>Go to Polite Provisions</h3> 
+                                                <h3>Polite Provisions</h3> 
                                             </div>
-                                    <div class="panel-body" style="background-image: url('http://lorempixel.com/300/200/nightlife/');">
-                                        <div class="container panel-item">
-                                            <div class="row no-border">
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nightlife/');">
+                                        <div class="row panel-item">
+                                            <div>
                                                 <div class="col-xs-8 no-border panel-item">
                                                 </div>
                                                 <div class="col-xs-4 upvote-panel panel-item">
-                                                    <div class="container text-center upvote-inner">
-                                                        <div class="row">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
                                                             <div class="col-xs-12">
                                                                 <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
                                                             </div>
                                                             <div class="col-xs-12">
-                                                                <span class="label">120</span>
+                                                                <span class="label">104</span>
                                                             </div>
                                                             <div class="col-xs-12">
                                                                 <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
@@ -166,15 +147,176 @@
                                         </div>
                                         </div>
                                         <div class="panel-footer">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-xs-8">
+                                            <div class="row">
+                                                <div class="col-xs-12">
                                                         
-                                                        <p>Order the sodas, they are good</p>
+                                                        <p>Small pub that sells drinks and sodas.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3>Hike to Potato Chip Rock</h3> 
+                                            </div>
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
+                                        <div class="row panel-item">
+                                            <div>
+                                                <div class="col-xs-8 no-border panel-item">
+                                                </div>
+                                                <div class="col-xs-4 upvote-panel panel-item">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <span class="label">125</span>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-4">
-                                                        <a href="activity.html" class="btn btn-info pull-right">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                        
+                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete. Bring lots of water because it can
+                                                        get really hot. There will be a big line at the top, and you will need to jump from one rock to another
+                                                            to get to the potatochip rock. When you see the antennas at the top, that means you are close.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3>Polite Provisions</h3> 
+                                            </div>
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nightlife/');">
+                                        <div class="row panel-item">
+                                            <div>
+                                                <div class="col-xs-8 no-border panel-item">
+                                                </div>
+                                                <div class="col-xs-4 upvote-panel panel-item">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <span class="label">104</span>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                        
+                                                        <p>Small pub that sells drinks and sodas.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3>Hike to Potato Chip Rock</h3> 
+                                            </div>
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
+                                        <div class="row panel-item">
+                                            <div>
+                                                <div class="col-xs-8 no-border panel-item">
+                                                </div>
+                                                <div class="col-xs-4 upvote-panel panel-item">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <span class="label">125</span>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                        
+                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete. Bring lots of water because it can
+                                                        get really hot. There will be a big line at the top, and you will need to jump from one rock to another
+                                                            to get to the potatochip rock. When you see the antennas at the top, that means you are close.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3>Polite Provisions</h3> 
+                                            </div>
+                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nightlife/');">
+                                        <div class="row panel-item">
+                                            <div>
+                                                <div class="col-xs-8 no-border panel-item">
+                                                </div>
+                                                <div class="col-xs-4 upvote-panel panel-item">
+                                                    <div class="row text-center upvote-inner">
+                                                        <div class="col-xs-12 pull-right">
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <span class="label">104</span>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                        
+                                                        <p>Small pub that sells drinks and sodas.
+                                                        </p>
+                                                        <a href="activity.html" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
                                                 </div>   
                                             </div>
                                         </div>
