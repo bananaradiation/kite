@@ -82,8 +82,8 @@
                                 </textarea>
                             </div>
                             <div class="col-xs-12">
-                                <label>Description</label>
-                                <input class="form-control" type="file"/>
+                                <label>Photo</label>
+                                <input class="form-control" type="filepicker" name="photo"/>
                             </div>
                             <div class="col-xs-12">
                                 <label>Location</label>
@@ -146,8 +146,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+    <script>
+        apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
+        filepicker.setKey(apiKey);
+    </script>
     
  
   </body>

@@ -16,3 +16,55 @@ Started GET "/" for 127.3.61.1 at 2014-05-08 17:56:34 -0400
 Processing by Rails::WelcomeController#index as HTML
   Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
 Completed 200 OK in 208ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (222.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (84.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20140511200326)
+  [1m[35m (14.4ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `logged_in` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140511200326')
+  [1m[36m (29.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBadges (20140515201251)
+  [1m[35m (112.1ms)[0m  CREATE TABLE `badges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `requirements` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140515201251')
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActivities (20140515203328)
+  [1m[35m (19.8ms)[0m  CREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `loc_x` decimal, `loc_y` decimal, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140515203328')
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVotes (20140516002720)
+  [1m[35m (45.4ms)[0m  CREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (31.9ms)[0m  [1mCREATE INDEX `index_votes_on_user_id` ON `votes` (`user_id`) [0m
+  [1m[35m (79.2ms)[0m  CREATE INDEX `index_votes_on_activity_id` ON `votes` (`activity_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516002720')
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20140516003830)
+  [1m[35m (39.4ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (31.4ms)[0m  [1mCREATE INDEX `index_comments_on_user_id` ON `comments` (`user_id`) [0m
+  [1m[35m (78.0ms)[0m  CREATE INDEX `index_comments_on_activity_id` ON `comments` (`activity_id`) 
+  [1m[36m (3.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516003830')
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20140516004621)
+  [1m[35m (14.9ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516004621')
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJoinTableActivityCategory (20140516005036)
+  [1m[35m (48.4ms)[0m  CREATE TABLE `activities_categories` (`activity_id` int(11) NOT NULL, `category_id` int(11) NOT NULL) ENGINE=InnoDB
+  [1m[36m (28.3ms)[0m  [1mCREATE INDEX `index_activities_categories_on_activity_id_and_category_id` ON `activities_categories` (`activity_id`, `category_id`) [0m
+  [1m[35m (113.4ms)[0m  CREATE INDEX `index_activities_categories_on_category_id_and_activity_id` ON `activities_categories` (`category_id`, `activity_id`) 
+  [1m[36m (1.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516005036')
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePhotos (20140516005605)
+  [1m[35m (39.4ms)[0m  CREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `activity_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (109.2ms)[0m  [1mCREATE INDEX `index_photos_on_activity_id` ON `photos` (`activity_id`) [0m
+  [1m[35m (26.2ms)[0m  CREATE INDEX `index_photos_on_user_id` ON `photos` (`user_id`) 
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516005605')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
