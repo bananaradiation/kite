@@ -68,3 +68,276 @@ Migrating to CreatePhotos (20140516005605)
   [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140516005605')
   [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.3.61.1 at 2014-05-16 15:00:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (21.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (18.0ms)
+Completed 200 OK in 981ms (Views: 561.7ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mUser Load (7.0ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[36mBadge Load (0.6ms)[0m  [1mSELECT `badges`.* FROM `badges`[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):7)
+  [1m[35mUser Load (2.0ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (16.1ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 20:19:22', 0, 'Nico', '2014-05-17 20:19:22')[0m
+  [1m[35m (18.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mBadge Load (0.8ms)[0m  [1mSELECT `badges`.* FROM `badges` WHERE `badges`.`user_id` = 1[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):15)
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to RemoveUserFromBadges (20140517203347)
+  [1m[35m (184.6ms)[0m  ALTER TABLE `badges` DROP `user_id`
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140517203347')
+  [1m[36m (73.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJoinTableBadgeUser (20140517203541)
+  [1m[35m (45.1ms)[0m  CREATE TABLE `badges_users` (`badge_id` int(11) NOT NULL, `user_id` int(11) NOT NULL) ENGINE=InnoDB
+  [1m[36m (24.1ms)[0m  [1mCREATE INDEX `index_badges_users_on_badge_id_and_user_id` ON `badges_users` (`badge_id`, `user_id`) [0m
+  [1m[35m (79.5ms)[0m  CREATE INDEX `index_badges_users_on_user_id_and_badge_id` ON `badges_users` (`user_id`, `badge_id`) 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140517203541')
+  [1m[36m (11.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.6ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mBadge Load (4.5ms)[0m  [1mSELECT `badges`.* FROM `badges` ORDER BY `badges`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (16.7ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`user_id` = 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (2.1ms)[0m  SELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36m (23.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM `badges_users` WHERE `badges_users`.`user_id` = 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (46.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (74.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Sean B', '2014-05-17 21:59:22')[0m
+  [1m[35m (56.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Hannah C', '2014-05-17 21:59:22')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Bonnie Q', '2014-05-17 21:59:22')[0m
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Charlie C', '2014-05-17 21:59:22')
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Yanli W', '2014-05-17 21:59:22')[0m
+  [1m[35m (10.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Ozzie T', '2014-05-17 21:59:22')
+  [1m[36m (21.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 21:59:22', 0, 'Nico P', '2014-05-17 21:59:22')[0m
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 21:59:22', 'Outdoors', '2014-05-17 21:59:22')
+  [1m[36m (10.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 21:59:23', 'Art', '2014-05-17 21:59:23')[0m
+  [1m[35m (9.6ms)[0m  COMMIT
+  [1m[36m (2.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 21:59:23', 'Activity', '2014-05-17 21:59:23')
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Sean B', '2014-05-17 22:00:47')[0m
+  [1m[35m (112.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Hannah C', '2014-05-17 22:00:47')
+  [1m[36m (8.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Bonnie Q', '2014-05-17 22:00:47')[0m
+  [1m[35m (8.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Charlie C', '2014-05-17 22:00:47')
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Yanli W', '2014-05-17 22:00:47')[0m
+  [1m[35m (7.4ms)[0m  COMMIT
+  [1m[36m (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Ozzie T', '2014-05-17 22:00:47')
+  [1m[36m (58.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:47', 0, 'Nico P', '2014-05-17 22:00:47')[0m
+  [1m[35m (4.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Outdoors', '2014-05-17 22:00:48')
+  [1m[36m (45.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (3.9ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Art', '2014-05-17 22:00:48')[0m
+  [1m[35m (8.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Activity', '2014-05-17 22:00:48')
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Sun God statue', 0, 0, 'Sun God', '2014-05-17 22:00:48')[0m
+  [1m[35m (21.7ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'A windy path in the design of a snake leading to Giesel from Warren', 0, 0, 'Snake Path', '2014-05-17 22:00:48')
+  [1m[36m (28.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'A beach near campus. Some areas clothing optional', 0, 0, 'Black\'s Beach', '2014-05-17 22:00:48')[0m
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'A house on top of EBU1', 0, 0, 'Fallen Star', '2014-05-17 22:00:48')
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Geocaches near UCSD', 0, 0, 'Geocache', '2014-05-17 22:00:48')[0m
+  [1m[35m (55.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', '', 0, 0, 'Giraffe Net', '2014-05-17 22:00:48')
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Dr. Seuss and the Cat in the Hat near Giesel', 0, 0, 'Dr. Seuss statue', '2014-05-17 22:00:48')[0m
+  [1m[35m (4.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-17 22:00:48', 'Official campus trails', 0, 0, 'Trails', '2014-05-17 22:00:48')
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (1, 5)[0m
+  [1m[35m (126.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (2, 5)
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (3, 4)[0m
+  [1m[35m (7.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (3, 6)
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (4, 5)[0m
+  [1m[35m (3.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (5, 4)
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (5, 6)[0m
+  [1m[35m (3.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (6, 5)
+  [1m[36m (37.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (7, 5)[0m
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (8, 4)
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (8, 6)[0m
+  [1m[35m (3.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (1, 'Don\'t poop under the Sun God troll. Downvoting', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 9)
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (2, 'Snake path is a real thing, leads to Geisel coming from Warren mall.', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 10)[0m
+  [1m[35m (31.1ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (5, 'Lots of geocaches around campus', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 11)
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (4, 'Fallen Star on top of EBU1 in Warren, check for visiting hours online', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 12)[0m
+  [1m[35m (6.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'wtf if the giraffe net???', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 13)
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (35.9ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'the big blue useless net thing walking from library walk towards mandeville', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 14)[0m
+  [1m[35m (28.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'oooh that thing. is it to catch the trees from falling?', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 13)
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'no..its art. apparently the top of the net is level while the posts spans different heights, therefore art', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 14)[0m
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'o really? i dont get it. are you sure?', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 13)
+  [1m[36m (137.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'no, someone told me that and i decided to believe them', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 14)[0m
+  [1m[35m (6.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'kk ty', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 13)
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'How many trails?', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 15)[0m
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (99.1ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'here are the trails http://blink.ucsd.edu/HR/services/support/health/walk/maps.html', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 9)
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'thanks +1', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 15)[0m
+  [1m[35m (4.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'Are there naked people at blacks beach?', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 15)
+  [1m[36m (6.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'There is a portion of the beach that is clothing optional.', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 12)[0m
+  [1m[35m (95.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'Abandon all hope, ye who enter here', '2014-05-17 22:00:49', '2014-05-17 22:00:49', 13)
+  [1m[36m (9.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, '+1', '2014-05-17 22:00:50', '2014-05-17 22:00:50', 14)[0m
+  [1m[35m (5.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-17 22:00:50', 'Artistic Integrity', 'See all of the art structures on campus', '2014-05-17 22:00:50')
+  [1m[36m (32.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-17 22:00:50', 'Outdoorsperson', 'Visit all of the outdoor sights on and around campus', '2014-05-17 22:00:50')[0m
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-17 22:00:50', 'Gotta Geocache Them All', 'Find all the geocaches on campus', '2014-05-17 22:00:50')
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 9)[0m
+  [1m[35m (20.4ms)[0m  COMMIT
+  [1m[36m (3.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 10)
+  [1m[36m (91.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 11)[0m
+  [1m[35m (4.7ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 12)
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (79.9ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 13)[0m
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 14)
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 15)[0m
+  [1m[35m (75.1ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 9)
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 10)[0m
+  [1m[35m (5.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 11)
+  [1m[36m (21.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (7.7ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', 1, '2014-05-17 22:00:50', 12)[0m
+  [1m[35m (12.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 13)
+  [1m[36m (45.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (4.5ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 14)[0m
+  [1m[35m (20.6ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-17 22:00:50', -1, '2014-05-17 22:00:50', 15)
+  [1m[36m (11.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1
