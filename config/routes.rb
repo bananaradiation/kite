@@ -1,4 +1,13 @@
 Kite::Application.routes.draw do
+    
+    resources :activity
+    resources :badge
+    resources :category
+    resources :comment
+    resources :photo
+    resources :user
+    resources :vote
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

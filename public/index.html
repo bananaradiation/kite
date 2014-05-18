@@ -1,0 +1,39 @@
+<!doctyle html>
+<html lang="en" ng-app="SECBioBankApp">
+	<head>
+
+		<!-- Angular bootstrap -->
+		<script src="js/angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<!-- Bootstrap core CSS -->
+		<link href="http://shileyresearch.ucsd.edu/biobank/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap theme CSS -->
+		<link href="http://shileyresearch.ucsd.edu/biobank/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="http://shileyresearch.ucsd.edu/biobank/css/sticky-footer-navbar.css" rel="stylesheet">
+
+		<link href="http://shileyresearch.ucsd.edu/biobank/fonts.css" rel="stylesheet">
+	    <link href="http://shileyresearch.ucsd.edu/biobank/css/line.css" rel="stylesheet">
+
+		<link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
+
+
+	</head>
+
+	<body ng-controller="AppRootCtrl">
+		<ng-include src="'html/partials/navbar.html'"></ng-include>
+
+		<div class="container" ng-view=""></div>
+
+		<ng-include src="'html/partials/footer.html'"></ng-include>
+
+	    <!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="js/jquery/jquery.min.js"></script>
+	    <script src="js/jquery/bootstrap.min.js"></script>
+	</body>
+</html>

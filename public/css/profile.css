@@ -4,16 +4,14 @@
 
 @media (min-width:768px) {
 .container {
-width:100%;
+    width:100%;
 }
 #main-content{
-     min-height: 100%;
     height: auto; 
    
 }
 #main-content > .row {
- overflow-x:scroll;
-     overflow-y:hidden;
+    overflow-y:hidden;
     white-space:nowrap;
 }    
 #main-content > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
@@ -21,4 +19,6 @@ width:100%;
     display:inline-block;
 }
 
-.top-buffer { margin-top:5%; }
+.top-buffer { 
+    margin-top:5%; 
+}
