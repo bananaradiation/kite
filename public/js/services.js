@@ -8,6 +8,7 @@ KiteServices.factory('ActivitiesSvc', ['$resource',
 			resources: $resource(null, {}, {
 				get_activities: {method:'GET', url:'activities/get_activities', isArray:true},
                 get_activity: {method:'GET', url:'activities/get_activity', isArray:false},
+                vote_on: {method:'POST', url:'activities/vote_on', isArray:false},
 			})
 		}
 	}

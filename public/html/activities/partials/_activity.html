@@ -12,13 +12,13 @@
                     <div class="row text-center upvote-inner">
                         <div class="col-xs-12 pull-right">
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
+                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up" ng-click="vote_on(1)"></i></button>
                             </div>
                             <div class="col-xs-12">
                                 <span class="label">{{activity.num_votes}}</span>
                             </div>
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
+                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down" ng-click="vote_on(0)"></i></button>
                             </div>
                         </div>
                     </div>
