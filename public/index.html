@@ -1,39 +1,69 @@
 <!doctyle html>
-<html lang="en" ng-app="SECBioBankApp">
+<html lang="en" ng-app="KiteApp">
 	<head>
+		<!-- Angular library-->
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-cookies.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-resource.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-route.min.js"></script>
 
-		<!-- Angular bootstrap -->
-		<script src="js/angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+		<!-- Angular 1.2.2 for google-maps API -->
+		<!--
+		<script src="https://code.angularjs.org/1.2.2/angular.js"></script>
+		<script src="https://code.angularjs.org/1.2.2/angular-cookies.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.2/angular-resource.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.2/angular-route.min.js"></script> -->
 
-		<!-- Styles -->
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<!-- Boilerplate -->
+		<script src="js/controllers.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/app.js"></script>
 
-		<!-- Bootstrap core CSS -->
-		<link href="http://shileyresearch.ucsd.edu/biobank/css/bootstrap.min.css" rel="stylesheet">
-		<!-- Bootstrap theme CSS -->
-		<link href="http://shileyresearch.ucsd.edu/biobank/css/bootstrap-theme.min.css" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link href="http://shileyresearch.ucsd.edu/biobank/css/sticky-footer-navbar.css" rel="stylesheet">
+		<!-- Angular Google Map -->
+<!-- 		<script src="js/angular-google-maps.min.js"></script>
+		<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+		<script src="js/underscore-min.js"></script>
+ -->
 
-		<link href="http://shileyresearch.ucsd.edu/biobank/fonts.css" rel="stylesheet">
-	    <link href="http://shileyresearch.ucsd.edu/biobank/css/line.css" rel="stylesheet">
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <link rel="apple-touch-icon-precomposed" href="img/kite-icon-76@2x.png"/>
+	    <link rel="apple-touch-icon" href="img/kite-icon-76@2x.png"/>
+	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone.png" />
+	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone5.png" sizes="640x1096">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="">
+	    <link rel="stylesheet" href="css/style.css">
 
-		<link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
+	    <title>Kite</title>
 
+	    <!-- Bootstrap core CSS -->
 
+	    <!-- Latest compiled and minified CSS -->
+	    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	    <!-- Optional theme -->
+	    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	    <!-- Just for debugging purposes. Don't actually copy this line! -->
+	    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
 	</head>
 
 	<body ng-controller="AppRootCtrl">
-		<ng-include src="'html/partials/navbar.html'"></ng-include>
+		<ng-include src="'html/header.html'"></ng-include>
 
 		<div class="container" ng-view=""></div>
 
-		<ng-include src="'html/partials/footer.html'"></ng-include>
+		<!-- <ng-include src="'html/partials/footer.html'"></ng-include> -->
 
-	    <!-- Bootstrap core JavaScript
-	    ================================================== -->
-	    <!-- Placed at the end of the document so the pages load faster -->
-	    <script src="js/jquery/jquery.min.js"></script>
-	    <script src="js/jquery/bootstrap.min.js"></script>
 	</body>
 </html>
