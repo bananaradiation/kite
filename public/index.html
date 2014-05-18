@@ -1,0 +1,57 @@
+<!doctyle html>
+<html lang="en" ng-app="KiteApp">
+	<head>
+		<!-- Angular library-->
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-cookies.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-resource.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.0-rc.3/angular-route.min.js"></script>
+
+		<!-- Boilerplate -->
+		<script src="js/controllers.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/app.js"></script>
+
+
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <link rel="apple-touch-icon-precomposed" href="img/kite-icon-76@2x.png"/>
+	    <link rel="apple-touch-icon" href="img/kite-icon-76@2x.png"/>
+	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone.png" />
+	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone5.png" sizes="640x1096">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="">
+	    <link rel="stylesheet" href="css/style.css">
+		    
+	    <title>Kite</title>
+
+	    <!-- Bootstrap core CSS -->
+	    
+	    <!-- Latest compiled and minified CSS -->
+	    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	    <!-- Optional theme -->
+	    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	    <!-- Just for debugging purposes. Don't actually copy this line! -->
+	    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body ng-controller="AppRootCtrl">
+		<!-- <ng-include src="'html/partials/navbar.html'"></ng-include> -->
+
+		<div class="container" ng-view=""></div>
+
+		<!-- <ng-include src="'html/partials/footer.html'"></ng-include> -->
+
+	</body>
+</html>
