@@ -8,8 +8,9 @@ KiteControllers.controller('AppRootCtrl', ['$scope',
 	}
 ])
 
-KiteControllers.controller('ActivitiesCtrl', [$scope,
-	function($scope) {
-
+KiteControllers.controller('ActivitiesCtrl', ['$scope', 'ActivitiesSvc',
+	function($scope, ActivitiesSvc) {
+		$scope.activities = ActivitiesSvc.resources.get_activities();
+		//console.log(activities);
 	}
 ])

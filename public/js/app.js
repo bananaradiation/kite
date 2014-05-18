@@ -4,10 +4,10 @@ var KiteApp = angular.module('KiteApp', ['ngRoute', 'KiteControllers', 'KiteServ
 
 KiteApp.config(['$routeProvider',
 	function($routeProvider) {
-		// $routeProvider.when('/', {
-		// 	templateUrl: HOST + 'html/landing/landing.html',
-		// 	controller: 'AuthCtrl'
-		// }).
+		$routeProvider.when('/', {
+			templateUrl: 'html/activities/main_list.html',
+			controller: 'ActivitiesCtrl'
+		}).
 		// when('/collections', {
 		// 	templateUrl: HOST + 'html/collections/home.html',
 		// 	controller: 'CollectionsCtrl'
@@ -32,6 +32,6 @@ KiteApp.config(['$routeProvider',
 		// 	templateUrl: HOST + 'html/collections/labels.html',
 		// 	controller: 'PrintsCtrl'
 		// }).
-		// otherwise({redirectTo:HOST});
+		otherwise({redirectTo:'/'});
 	}
 ])

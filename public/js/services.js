@@ -2,9 +2,22 @@
 
 var KiteServices = angular.module('KiteServices', ['ngResource', 'ngCookies']);
 
+KiteServices.factory('ActivitiesSvc', ['$resource',
+	function($resource) {
+		return {
+			resources: $resource(null, {}, {
+				get_activities: {method:'GET', url:'activities/get_activities', isArray:true}
+			})
+		}
+	}
+]);
+
 /* ************************************ */
 /* Data: Store app data in cookie		*/
 /* ************************************ */
+
+
+
 // var COOKIE_NAME = 'KiteServices_Data'
 // KiteServices.factory('DataSvc', ['$cookieStore',
 // 	function($cookieStore) {
