@@ -3214,3 +3214,828 @@ Started GET "/assets/vote.js?body=1" for 127.3.61.1 at 2014-05-18 17:18:24 -0400
 
 
 Started GET "/assets/badge.js?body=1" for 127.3.61.1 at 2014-05-18 17:18:24 -0400
+
+
+Started GET "/activity/create" for 127.3.61.1 at 2014-05-18 17:46:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ActivityController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  Rendered activity/show.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 814ms (Views: 512.6ms | ActiveRecord: 81.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-18 17:46:50 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 17:46:50 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 17:46:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.3.61.1 at 2014-05-18 17:46:50 -0400
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:48:39 -0400
+Processing by ActivityController#new as HTML
+Completed 500 Internal Server Error in 197ms
+
+ActionView::MissingTemplate (Missing template activity/new, application/new with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/views"
+):
+  actionpack (4.0.0) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.0) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /opt/rh/ruby193/root/usr/share/ruby/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:403:in `_run__3113463353479962184__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2985418887755952590__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:48:54 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_37918780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (80.1ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:49:35 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (208.3ms)
+Completed 500 Internal Server Error in 395ms
+
+ActionView::Template::Error (undefined method `activities_path' for #<#<Class:0x007f89b8e2a880>:0x007f89b8e36338>):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_37918780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.6ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:53:15 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 88ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_37918780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (65.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (88.3ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:54:02 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_70114705906780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (92.6ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:54:30 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 109ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_70114705906780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (96.7ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:55:26 -0400
+Processing by ActivityController#new as HTML
+  Rendered activity/new.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 307ms
+
+ActionView::Template::Error (undefined method `activities_path' for #<#<Class:0x007f89b88be220>:0x007f89b8990d88>):
+    1: <h1>Add a new Activity</h1>
+    2: <%= form_for @activity do |form| %>
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+  app/views/activity/new.html.erb:2:in `_app_views_activity_new_html_erb___1175699876237925166_70114705906780'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.3ms)
+
+
+Started GET "/activity/new" for 127.3.61.1 at 2014-05-18 17:56:36 -0400
+
+ActionController::RoutingError (No route matches [GET] "/activity/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (118.9ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (399.9ms)
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 17:56:54 -0400
+
+ActionController::RoutingError (uninitialized constant ActivitiesController):
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2985418887755952590__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (223.6ms)
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 17:57:26 -0400
+
+LoadError (Unable to autoload constant ActivitiesController, expected /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb to define it):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2985418887755952590__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (105.1ms)
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 17:57:51 -0400
+Processing by ActivitiesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate (Missing template activities/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/views"
+):
+  actionpack (4.0.0) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.0) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /opt/rh/ruby193/root/usr/share/ruby/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:403:in `_run__3657990897187007073__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2985418887755952590__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 18:03:35 -0400
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:35 -0400
+
+
+Started GET "/assets/badge.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:35 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:35 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:35 -0400
+
+
+Started GET "/assets/vote.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:37 -0400
+
+
+Started GET "/assets/photo.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.3.61.1 at 2014-05-18 18:03:38 -0400
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 18:04:58 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 904ms (Views: 775.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:03 -0400
+
+
+Started GET "/assets/activity.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:03 -0400
+
+
+Started GET "/assets/category.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:03 -0400
+
+
+Started GET "/assets/photo.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:03 -0400
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-18 18:05:06 -0400
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/vote.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:07 -0400
+
+
+Started GET "/assets/activity.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:08 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:08 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:08 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:08 -0400
+
+
+Started GET "/assets/photo.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:08 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:09 -0400
+
+
+Started GET "/activities/index.html.erb" for 127.3.61.1 at 2014-05-18 18:05:14 -0400
+
+ActionController::RoutingError (No route matches [GET] "/activities/index.html.erb"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.2ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (37.0ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (303.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2594.0ms)
+
+
+Started GET "/activities/show" for 127.3.61.1 at 2014-05-18 18:05:23 -0400
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered activities/show.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 74ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @activities.each do |a| %>
+    2:     <%= a.name %>
+    3:     </br>
+    4: <% end %>
+  app/views/activities/show.html.erb:1:in `_app_views_activities_show_html_erb___816078018392078574_30155460'
+  app/controllers/activities_controller.rb:10:in `show'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.8ms)
+
+
+Started GET "/activities/" for 127.3.61.1 at 2014-05-18 18:05:31 -0400
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:31 -0400
+
+
+Started GET "/assets/photo.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/category.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:33 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-18 18:05:34 -0400
+
+
+Started GET "/activities/" for 127.3.61.1 at 2014-05-18 18:06:06 -0400
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:06 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:06 -0400
+
+
+Started GET "/assets/activity.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:06 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/vote.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:07 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:08 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:08 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:08 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:08 -0400
+
+
+Started GET "/assets/vote.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:08 -0400
+
+
+Started GET "/activities/show" for 127.3.61.1 at 2014-05-18 18:06:22 -0400
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[35mActivity Load (0.8ms)[0m  SELECT `activities`.* FROM `activities`
+  Rendered activities/show.html.erb within layouts/application (215.3ms)
+Completed 200 OK in 356ms (Views: 251.7ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/assets/badge.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:22 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:22 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/category.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/photo.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:23 -0400
+
+
+Started GET "/assets/badge.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:24 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-18 18:06:24 -0400
+
+
+Started GET "/activities/new" for 127.3.61.1 at 2014-05-18 18:06:31 -0400
+Processing by ActivitiesController#new as HTML
+  Rendered activities/new.html.erb within layouts/application (62.7ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (undefined method `activity' for #<Activity:0x007f59dc2b7888>):
+    3:  
+    4:   <p>
+    5:     <%= form.label :activity, "Your URL:" %>
+    6:     <%= form.text_field :activity %>
+    7:   </p>
+    8:  
+    9:  
+  app/views/activities/new.html.erb:6:in `block in _app_views_activities_new_html_erb___4367378969819592689_70011961347700'
+  app/views/activities/new.html.erb:2:in `_app_views_activities_new_html_erb___4367378969819592689_70011961347700'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (87.8ms)

@@ -1,5 +1,9 @@
-class ActivityController < ApplicationController
+class ActivitiesController < ApplicationController
     def index
+    end
+    
+    def new
+        @activity = Activity.new(params[:activity])
     end
     
     def show 
@@ -13,4 +17,10 @@ class ActivityController < ApplicationController
             }
         end
     end
+
+
+    def create
+    end
+    
+    
 end
