@@ -7,3 +7,9 @@ KiteControllers.controller('AppRootCtrl', ['$scope',
 	function($scope) {
 	}
 ])
+
+KiteControllers.controller('ActivitiesCtrl', [$scope,
+	function($scope) {
+
+	}
+])
