@@ -6,7 +6,8 @@ KiteServices.factory('ActivitiesSvc', ['$resource',
 	function($resource) {
 		return {
 			resources: $resource(null, {}, {
-				get_activities: {method:'GET', url:'activities/get_activities', isArray:true}
+				get_activities: {method:'GET', url:'activities/get_activities', isArray:true},
+                get_activity: {method:'GET', url:'activities/get_activity', isArray:false},
 			})
 		}
 	}

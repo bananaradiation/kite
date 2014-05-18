@@ -8,9 +8,25 @@ KiteControllers.controller('AppRootCtrl', ['$scope',
 	}
 ])
 
-KiteControllers.controller('ActivitiesCtrl', ['$scope', 'ActivitiesSvc',
-	function($scope, ActivitiesSvc) {
-		$scope.activities = ActivitiesSvc.resources.get_activities();
+KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc',
+	function($scope, $routeParams, ActivitiesSvc) {
+        console.log($routeParams);
+        if ($routeParams.id != null) {
+            $scope.activity = ActivitiesSvc.resources.get_activity(
+                {
+                    activity_id:43
+                }
+            );
+        }
+        else {
+            $scope.activities = ActivitiesSvc.resources.get_activities(
+                {
+                    user_id:123
+                }
+            );
+        }
+
 		//console.log(activities);
 	}
 ])
+

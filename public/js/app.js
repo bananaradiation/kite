@@ -24,10 +24,10 @@ KiteApp.config(['$routeProvider',
 		// 	templateUrl: HOST + 'html/collections/print.html',
 		// 	controller: 'PrintsCtrl'
 		// }).
-		// when('/collections/print/:id', {
-		// 	templateUrl: HOST + 'html/collections/print.html',
-		// 	controller: 'PrintsCtrl'
-		// }).
+		when('/activities/:id', {
+			templateUrl: 'html/activities/details.html',
+			controller: 'ActivitiesCtrl'
+		}).
 		// when('/collections/labels', {
 		// 	templateUrl: HOST + 'html/collections/labels.html',
 		// 	controller: 'PrintsCtrl'
