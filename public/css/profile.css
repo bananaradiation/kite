@@ -1,3 +1,33 @@
+
+.top-buffer { 
+    margin-top:5%; 
+}
+
+.badge-img {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 10px 0;
+}
+
+.section h4{
+    display: block;
+    font: 700 14px/1.2142857142 Lato, sans-serif;
+    letter-spacing: 0.1em;
+    max-width: 696px;
+    padding: 8px 0 9px;
+    text-transform: uppercase;
+    float: right;
+}
+
+.name {
+    margin: 0 5%;
+    padding: 10% 0 10% 0 10%;
+    font: italic 700 68px/1 "Playfair Display", serif;
+    max-width: 696px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
 #wrap > .container {
     padding: 60px 15px 0;
 }
@@ -6,9 +36,9 @@
 .container {
     width:100%;
 }
+
 #main-content{
     height: auto; 
-   
 }
 #main-content > .row {
     overflow-y:hidden;
@@ -16,9 +46,4 @@
 }    
 #main-content > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
     float:none;
-    display:inline-block;
-}
-
-.top-buffer { 
-    margin-top:5%; 
-}
+    display:inline-block

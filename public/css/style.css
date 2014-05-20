@@ -2,13 +2,29 @@ body {
     padding: 70px 0px;   
 }
 
+.panel-default {
+    padding:5px 15px;
+    border-color: rgba(155, 196, 223, 1);
+}
+
 .panel-default .panel-heading {
     padding:10px 10px;
+    background: none;
 }
 
 .panel-default .panel-heading h3{
     padding: 0;
     margin: 0;
+    text-align: center;
+}
+
+.panel-default .panel-heading h5{
+    color: #34495e;
+    padding: 10px 0;
+    text-align: left;
+    margin: 0;
+    font: italic 600 48px/1 "Playfair Display", serif;
+    max-width: 696px;
 }
 
 .panel-default .activity-body{
@@ -21,6 +37,30 @@ body {
 .panel-default .panel-body .panel-item{
     height:200px;
     margin-right: 0;
+}
+
+.panel-footer {
+    background: none;
+}
+
+.panel-footer .row p {
+    padding: 10px 0 5px 0;
+    margin: 0;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    max-width: 696px;
+}
+
+
+.panel-footer .row h6 {
+    display: block;
+    font: 400 13px/1.3076923076 Lato, sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.noborder-color {
+    border-color: transparent;
 }
 
 .no-border{

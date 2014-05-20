@@ -1,8 +1,8 @@
 Kite::Application.routes.draw do
     
     get ':controller/:action/:category_id/:user_id', controller: 'activities', action: 'get_activity', as: :activity_get_activity
-    post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'vote_on', as: :activity_add_activity
-    post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'vote_on', as: :activity_save_activity
+    post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'add_activity', as: :activity_add_activity
+    post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'save_activity', as: :activity_save_activity
     post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'vote_on', as: :activity_vote_on
     post ':controller/:action/:activity_id/:user_id', controller: 'activities', action: 'add_photo', as: :activity_add_photo
     

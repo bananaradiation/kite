@@ -4946,3 +4946,6 @@ Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-18 21:55:5
 
 
 Started GET "/assets/badge.js?body=1" for 127.3.61.1 at 2014-05-18 21:55:50 -0400
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-19 15:18:14 -0400
