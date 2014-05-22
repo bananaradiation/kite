@@ -39,7 +39,7 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
         if ($routeParams.id != null) {
             $scope.activity = ActivitiesSvc.resources.get_activity(
                 {
-                    activity_id:43
+                    activity_id:$routeParams.id
                 }
             );
             // console.log($scope.activity);

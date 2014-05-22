@@ -4,7 +4,7 @@ body {
 
 .panel-default {
     padding:5px 15px;
-    border-color: rgba(155, 196, 223, 1);
+    border-color: rgba(203, 215, 223, 1);
 }
 
 .panel-default .panel-heading {
@@ -23,7 +23,7 @@ body {
     padding: 10px 0;
     text-align: left;
     margin: 0;
-    font: italic 600 48px/1 "Playfair Display", serif;
+    font: 700 48px/1 'Playfair Display SC', serif;
     max-width: 696px;
 }
 

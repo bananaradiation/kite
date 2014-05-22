@@ -1,4 +1,10 @@
-
+.avatar {
+    padding: 10px;
+    border: 3px solid rgb(230, 230, 230);
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+}
 .top-buffer { 
     margin-top:5%; 
 }
@@ -7,6 +13,10 @@
     max-height: 100px;
     max-width: 100px;
     margin: 10px 0;
+}
+
+.topline {
+    border-top: 1px solid #E2E2E2;
 }
 
 .section h4{
@@ -20,12 +30,10 @@
 }
 
 .name {
-    margin: 0 5%;
-    padding: 10% 0 10% 0 10%;
     font: italic 700 68px/1 "Playfair Display", serif;
     max-width: 696px;
     text-transform: uppercase;
-    text-align: right;
+    text-align: left;
 }
 
 #wrap > .container {

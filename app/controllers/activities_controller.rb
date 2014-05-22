@@ -9,14 +9,8 @@ class ActivitiesController < ApplicationController
     
     def show 
         @activities = Activity.all
-        respond_to do |format|
-            format.html
-            format.json {
-                render :json => {
-                    :activities => @activities
-                }
-            }
-        end
+        render :json => @activities
+        
     end
 
 
@@ -35,13 +29,13 @@ class ActivitiesController < ApplicationController
     end
     
     def get_activities
-        puts :activity_id
-        respond_to do |format|
-            format.html
-            format.json {
-                render :show
-            }
-        end
+        @activities = Activity.all
+        render :json => @activities
+    end
+    
+    def get_activity
+        @activity = Activity.find(params[:activity_id])
+        render :json => @activity
     end
 
 end
