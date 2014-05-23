@@ -8,14 +8,14 @@ KiteApp.config(['$routeProvider',
 			templateUrl: 'html/activities/main_list.html',
 			controller: 'ActivitiesCtrl'
 		}).
-		// when('/collections', {
-		// 	templateUrl: HOST + 'html/collections/home.html',
-		// 	controller: 'CollectionsCtrl'
-		// }).
-		// when('/collections/ucsd/new', {
-		// 	templateUrl: HOST + 'html/collections/new_ucsd.html',
-		// 	controller: 'CollectionsCtrl'
-		// }).
+		when('/users/:id', {
+			templateUrl: 'html/users/profile.html',
+			controller: 'UsersCtrl'
+		}).
+		when('/auth/login', {
+			templateUrl: 'html/auth/login.html',
+			controller: 'AuthCtrl'
+		}).
 		// when('/collections/non-ucsd/new', {
 		// 	templateUrl: HOST + 'html/collections/new_non_ucsd.html',
 		// 	controller: 'CollectionsCtrl'

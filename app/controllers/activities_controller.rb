@@ -1,16 +1,16 @@
 class ActivitiesController < ApplicationController
     def index
-        
+
     end
-    
+
     def new
         @activity = Activity.new
     end
-    
-    def show 
+
+    def show
         @activities = Activity.all
         render :json => @activities
-        
+
     end
 
 
@@ -27,15 +27,15 @@ class ActivitiesController < ApplicationController
             end
         end
     end
-    
+
     def get_activities
-        @activities = Activity.includes(:categories).all
+        @activities = Activity.all
         render :json => @activities
     end
-    
+
     def get_activity
         @activity = Activity.find(params[:activity_id])
-        render :json => {:activity => @activity}
+        render :json => @activity
     end
 
 end

@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div ng-controller="AuthCtrl" class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -14,7 +14,9 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="me">Me</a></li>
+
+            <li ng-show="user.get_user()!=null"><a href="/#/users/0">{{user.get_user().name}}</a></li>
+            <li ng-show="user.get_user()==null"><a href="/#/auth/login">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

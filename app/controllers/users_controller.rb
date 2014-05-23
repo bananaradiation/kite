@@ -1,4 +1,5 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+
     def index
         @user1 = User.first
         @user2 = User.last
@@ -11,5 +12,10 @@ class UserController < ApplicationController
                 }
             }
         end
+    end
+
+    def login
+        user = User.first
+        render :json => user
     end
 end
