@@ -1,6 +1,8 @@
 body {
-    padding: 70px 0px;   
+    padding: 70px 0px;
 }
+
+.angular-google-map-container { height: 200px; }
 
 .panel-default {
     padding:5px 15px;
@@ -71,10 +73,10 @@ body {
 .center-y{
     vertical-align:middle;
     }
-.center-x{ 
+.center-x{
     text-align:center;
     }
-    
+
 .center-outer{
     display: table-cell;
     vertical-align: middle;

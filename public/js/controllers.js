@@ -3,9 +3,18 @@
 var KiteControllers = angular.module('KiteControllers', []);
 
 //AppRoot controller
-KiteControllers.controller('AppRootCtrl', ['$scope',
-	function($scope) {
-	}
+KiteControllers.controller('AppRootCtrl', ['$scope', 'AuthSvc',
+	function($scope,AuthSvc) {
+
+    	// $scope.user = {
+     //        get_user:function() {
+     //            return AuthSvc.get_user()
+     //        }
+     //    }
+
+     $scope.user = AuthSvc.get_user()
+     console.log($scope.user)
+    }
 ])
 
 KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc',
@@ -13,13 +22,14 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
         // console.log($routeParams);
         var userID=123;
 
-        // $scope.map = {
-        //     center: {
-        //         latitude: 45,
-        //         longitude: -73
-        //     },
-        //     zoom: 8
-        // };
+        $scope.map = {
+            center: {
+                latitude: 45,
+                longitude: -73
+            },
+            draggable: true,
+            zoom: 8
+        };
 
         $scope.vote = {
             check_votability:function() {
@@ -49,6 +59,19 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
             }
         };
 
+        $scope.category = {
+            selected: 0,
+            cat_filter: function(r) {
+                if ($scope.category.selected==0) {
+                    return true
+                }
+                else {
+                    return (r.category.category.id==$scope.category.selected)
+                }
+            },
+            // set_selected: function()
+        };
+
         // go to single activity detail page
         $scope.activity={};
         if ($routeParams.id != null) {
@@ -68,6 +91,20 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                 }
             );
         }
+
+        $scope.create_activity = {
+            data: {name: null, description: null, photos: [], location: null, category: null},
+            add_activity:function() {
+                console.log($scope.create_activity)
+            }
+        }
+
+
+// POST /activities/add_activity
+// Params:
+// user_id, activity_name, description, location, category
+// Returns:
+// success
 
 		//console.log(activities);
 	}
@@ -97,11 +134,5 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', 'AuthSvc',
         }
 
         $scope.logout = function() { AuthSvc.logout() }
-
-        $scope.user = {
-            get_user:function() {
-                return AuthSvc.get_user()
-            }
-        }
     }
 ])

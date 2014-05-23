@@ -1,0 +1,49 @@
+<div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+        <div class="row">
+            <div class="col-xs-0 col-md-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Create Activity</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Activity Name</label>
+                                <input class="form-control" type="text" ng-model="create_activity.data.name"/>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>Description</label>
+                                <textarea class="form-control" type="textarea" ng-model="create_activity.data.description"/></textarea>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>Photo</label>
+                                <div id="filepickerinput">
+                                    <input class="form-control" type="filepicker" name="//TODO" data-fp-store-access="public" data-fp-openTo="instagram" onchange="filep(event);" data-fp-debug="false" data-fp-button-text="Choose Photo"/>
+                                </div>
+                                <input type="hidden" name="img" value=""/>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>Location</label>
+                                <input class="form-control" type="text" ng-model="create_activity.data.location"/>
+                                <br>
+                                <google-map center="map.center" zoom="map.zoom"></google-map>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#" class="btn btn-danger pull-left">Cancel</a>
+                                <a ng-click="create_activity.add_activity()" class="btn btn-success pull-right">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-0 col-md-2"></div>
+        </div>
+    </div> <!-- /container -->

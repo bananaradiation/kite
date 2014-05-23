@@ -9,7 +9,7 @@
             <!-- Main component for a primary marketing message or call to action -->
             <div class="row">
               <!-- partial stuff -->
-              <div ng-repeat="activity in activity_data.activities">
+              <div ng-repeat="activity in activity_data.activities | filter:category.cat_filter">
                 <ng-include src="'html/activities/partials/_activity.html'"></ng-include>
               </div>
             </div>

@@ -8,8 +8,8 @@
                     <img alt="150x150" src="http://lorempixel.com/150/150/" class="img-circle avatar" style="float:left">
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 content-heading">
-                    <h5 class="visible-xs">Bill Griswold </h5>
-                    <h2 class="name hidden-xs">Bill Griswold </h2>
+                    <h5 class="visible-xs">{{user.name}} </h5>
+                    <h2 class="name hidden-xs">{{user.name}} </h2>
                 </div>
             </div>
             <!--<div class="col-xs-0 col-md-2"></div>-->
@@ -35,17 +35,8 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="container" id="main-content">
                         <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
-                                <img alt="100x100" src="img/Compas.png" class="badge-img">
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
-                                <img alt="100x100" src="img/Infinity-Loop.png" class="badge-img">
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
-                                <img alt="100x100" src="img/Pensils.png" class="badge-img">
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
-                                <img alt="100x100" src="img/Watches.png" class="badge-img">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6" ng-repeat="badge in user.badges">
+                                <img alt="100x100" ng-src="{{badge.href}}" class="badge-img">
                             </div>
                         </div>
                     </div>
@@ -74,138 +65,12 @@
                         <div class="container">
                           <!-- Main component for a primary marketing message or call to action -->
                             <div class="row">
+                                <div ng-repeat="activity in user.completed">
+                                    <ng-include src="'html/activities/partials/_activity.html'"></ng-include>
 
-                                <div class="col-xs-12 col-sm-12 col-md-4 noborder-color">
-                                    <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                    <h5>Hike to Potato Chip Rock</h5>
-                                            </div>
-                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
-                                        <div class="row panel-item">
-                                            <div>
-                                                <div class="col-xs-8 no-border panel-item">
-                                                </div>
-                                                <div class="col-xs-4 upvote-panel panel-item">
-                                                    <div class="row text-center upvote-inner">
-                                                        <div class="col-xs-12 pull-right">
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></img></button>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <span class="label">125</span>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete. Bring lots of water because it can
-                                                        get really hot. There will be a big line at the top, and you will need to jump from one rock to another
-                                                            to get to the potatochip rock. When you see the antennas at the top, that means you are close.
-                                                        </p>
-                                                        <h6>Sports</h6>
-                                                        <a href="activity.html" class="btn btn-info more">More<i class="glyphicon glyphicon-chevron-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-
-                                <div class="col-xs-12 col-sm-12 col-md-4">
-                                    <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h5>Polite Provisions</h5>
-                                            </div>
-                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nightlife/');">
-                                        <div class="row panel-item">
-                                            <div>
-                                                <div class="col-xs-8 no-border panel-item">
-                                                </div>
-                                                <div class="col-xs-4 upvote-panel panel-item">
-                                                    <div class="row text-center upvote-inner">
-                                                        <div class="col-xs-12 pull-right">
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <span class="label">104</span>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-
-                                                        <p>Small pub that sells drinks and sodas.
-                                                        </p>
-                                                        <h6>Drinks</h6>
-                                                        <a href="activity.html" class="btn btn-info more">More<i class="glyphicon glyphicon-chevron-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-12 col-md-4">
-                                    <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h5>Hike to Potato Chip Rock</h5>
-                                            </div>
-                                    <div class="panel-body activity-body" style="background-image: url('http://lorempixel.com/300/200/nature/');">
-                                        <div class="row panel-item">
-                                            <div>
-                                                <div class="col-xs-8 no-border panel-item">
-                                                </div>
-                                                <div class="col-xs-4 upvote-panel panel-item">
-                                                    <div class="row text-center upvote-inner">
-                                                        <div class="col-xs-12 pull-right">
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <span class="label">125</span>
-                                                            </div>
-                                                            <div class="col-xs-12">
-                                                                <button class="btn btn-default btn-lg"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-
-                                                        <p>The hike to potato chip rock is a long hike that takes about 4-5 hours to complete. Bring lots of water because it can
-                                                        get really hot. There will be a big line at the top, and you will need to jump from one rock to another
-                                                            to get to the potatochip rock. When you see the antennas at the top, that means you are close.
-                                                        </p>
-                                                        <h6>Sports</h6>
-                                                        <a href="activity.html" class="btn btn-info more">More<i class="glyphicon glyphicon-chevron-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-                        </div> <!-- /container -->
+                        </div>
                     </div>
                 <!-- Completed Activities list end -->
 

@@ -1,6 +1,6 @@
 'use strict';
 
-var KiteApp = angular.module('KiteApp', ['ngRoute', 'KiteControllers', 'KiteServices']);
+var KiteApp = angular.module('KiteApp', ['ngRoute', 'KiteControllers', 'KiteServices', 'google-maps', 'ngDisqus']);
 
 KiteApp.config(['$routeProvider',
 	function($routeProvider) {
@@ -16,10 +16,10 @@ KiteApp.config(['$routeProvider',
 			templateUrl: 'html/auth/login.html',
 			controller: 'AuthCtrl'
 		}).
-		// when('/collections/non-ucsd/new', {
-		// 	templateUrl: HOST + 'html/collections/new_non_ucsd.html',
-		// 	controller: 'CollectionsCtrl'
-		// }).
+		when('/activities/add', {
+			templateUrl: 'html/activities/add.html',
+			controller: 'ActivitiesCtrl'
+		}).
 		// when('/collections/print', {
 		// 	templateUrl: HOST + 'html/collections/print.html',
 		// 	controller: 'PrintsCtrl'

@@ -9,12 +9,13 @@ KiteServices.factory('ActivitiesSvc', ['$resource',
 				get_activities: {method:'GET', url:'activities/get_activities', isArray:false},
                 get_activity: {method:'GET', url:'activities/get_activity', isArray:false},
                 vote_on: {method:'POST', url:'activities/vote_on', isArray:false},
+                add_activity: {method:'POST', url:'activities/add_activity', isArray:false}
 			})
 		}
 	}
 ]);
 
-KiteServices.factory('UsersSvc', ['$resource',
+KiteServices.factory('UsersSvc', ['$resource', 'AuthSvc',
     function($resource) {
 
     }
