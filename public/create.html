@@ -82,7 +82,10 @@
                             </div>
                             <div class="col-xs-12">
                                 <label>Photo</label>
-                                <input class="form-control" type="filepicker" name="//TODO"/>
+                                <div id="filepickerinput">
+                                    <input class="form-control" type="filepicker" name="//TODO" data-fp-store-access="public" data-fp-openTo="instagram" onchange="filep(event);" data-fp-debug="false" data-fp-button-text="Choose Photo"/>
+                                </div>
+                                <input type="hidden" name="img" value=""/>
                             </div>
                             <div class="col-xs-12">
                                 <label>Location</label>
@@ -149,6 +152,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <script>
         apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
         filepicker.setKey(apiKey);
+        function filep(event)
+        {
+            console.log(event);
+            $("input[name='img']").val(event.fpfile.url);
+            console.log($("input[name='img']"));
+            $("#filepickerinput button").html("<img src="+ event.fpfile.url +"/> " + event.fpfile.filename);
+        }
     </script>
     
  

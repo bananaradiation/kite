@@ -5679,3 +5679,893 @@ Processing by ActivitiesController#get_activity as HTML
   Parameters: {"activity_id"=>"1"}
   [1m[35mActivity Load (0.7ms)[0m  SELECT `activities`.* FROM `activities` WHERE `activities`.`id` = 1 LIMIT 1
 Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:38:29 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[36mActivity Load (0.7ms)[0m  [1mSELECT `activities`.* FROM `activities`[0m
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:38:58 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[35mActivity Load (200.0ms)[0m  SELECT `activities`.* FROM `activities`
+Completed 200 OK in 1019ms (Views: 292.3ms | ActiveRecord: 274.7ms)
+
+
+Started GET "/me" for 127.3.61.1 at 2014-05-22 17:39:43 -0400
+
+ActionController::RoutingError (No route matches [GET] "/me"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.9ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (88.0ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (598.2ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:39:47 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[36mActivity Load (0.9ms)[0m  [1mSELECT `activities`.* FROM `activities`[0m
+Completed 200 OK in 268ms (Views: 161.5ms | ActiveRecord: 91.5ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:44:13 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/activities/get_activity" for 127.3.61.1 at 2014-05-22 17:52:03 -0400
+Processing by ActivitiesController#get_activity as HTML
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:37:in `get_activity'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (194.8ms)
+
+
+Started GET "/activities/get_activity/1" for 127.3.61.1 at 2014-05-22 17:52:10 -0400
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:37:in `get_activity'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (204.5ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:52:21 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT `activities`.* FROM `activities`[0m
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/%7B%7Bactivity.photos%5B0%5D%7D%7D" for 127.3.61.1 at 2014-05-22 17:52:24 -0400
+
+ActionController::RoutingError (No route matches [GET] "/%7B%7Bactivity.photos%5B0%5D%7D%7D"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (474.5ms)
+
+
+Started GET "/activities/get_activity?activity_id=43" for 127.3.61.1 at 2014-05-22 17:52:24 -0400
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"43"}
+  [1m[35mActivity Load (0.8ms)[0m  SELECT `activities`.* FROM `activities` WHERE `activities`.`id` = 43 LIMIT 1
+Completed 404 Not Found in 85ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity with id=43):
+  app/controllers/activities_controller.rb:37:in `get_activity'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (47.3ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (119.2ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (387.2ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.3.61.1 at 2014-05-22 17:52:38 -0400
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT `activities`.* FROM `activities` WHERE `activities`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/%7B%7Bactivity.photos%5B0%5D%7D%7D" for 127.3.61.1 at 2014-05-22 17:52:38 -0400
+
+ActionController::RoutingError (No route matches [GET] "/%7B%7Bactivity.photos%5B0%5D%7D%7D"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:138:in `service'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/httpserver.rb:94:in `run'
+  /opt/rh/ruby193/root/usr/share/ruby/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (89.0ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (594.8ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.3.61.1 at 2014-05-22 17:52:59 -0400
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/activities" for 127.3.61.1 at 2014-05-22 17:55:42 -0400
+Processing by ActivitiesController#index as HTML
+  Rendered activities/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 783ms (Views: 781.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/photo.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:44 -0400
+
+
+Started GET "/assets/category.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:44 -0400
+
+
+Started GET "/assets/activity.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:44 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/badge.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/comment.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/vote.css?body=1" for 127.3.61.1 at 2014-05-22 17:55:45 -0400
+
+
+Started GET "/assets/activity.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/badge.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/photo.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/vote.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:46 -0400
+
+
+Started GET "/assets/comment.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:47 -0400
+
+
+Started GET "/assets/category.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.3.61.1 at 2014-05-22 17:55:47 -0400
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 17:55:59 -0400
+Processing by ActivitiesController#get_activities as HTML
+  [1m[36mActivity Load (3.4ms)[0m  [1mSELECT `activities`.* FROM `activities`[0m
+Completed 200 OK in 380ms (Views: 221.4ms | ActiveRecord: 93.7ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 17:56:58 -0400
+Processing by ActivitiesController#get_activities as HTML
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (942.5ms)[0m  [1mDROP DATABASE IF EXISTS `kite_dev`[0m
+  [1m[35m (64.9ms)[0m  CREATE DATABASE `kite_dev` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (84.5ms)[0m  [1mCREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `loc_x` decimal(10,0), `loc_y` decimal(10,0), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (71.9ms)[0m  CREATE TABLE `activities_categories` (`activity_id` int(11) NOT NULL, `category_id` int(11) NOT NULL) ENGINE=InnoDB
+  [1m[36m (259.5ms)[0m  [1mCREATE INDEX `index_activities_categories_on_activity_id_and_category_id` USING btree ON `activities_categories` (`activity_id`, `category_id`) [0m
+  [1m[35m (273.3ms)[0m  CREATE INDEX `index_activities_categories_on_category_id_and_activity_id` USING btree ON `activities_categories` (`category_id`, `activity_id`) 
+  [1m[36m (24.3ms)[0m  [1mCREATE TABLE `badges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `requirements` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (83.2ms)[0m  CREATE TABLE `badges_users` (`badge_id` int(11) NOT NULL, `user_id` int(11) NOT NULL) ENGINE=InnoDB
+  [1m[36m (159.9ms)[0m  [1mCREATE INDEX `index_badges_users_on_badge_id_and_user_id` USING btree ON `badges_users` (`badge_id`, `user_id`) [0m
+  [1m[35m (166.6ms)[0m  CREATE INDEX `index_badges_users_on_user_id_and_badge_id` USING btree ON `badges_users` (`user_id`, `badge_id`) 
+  [1m[36m (127.6ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (171.0ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (99.8ms)[0m  [1mCREATE INDEX `index_comments_on_activity_id` USING btree ON `comments` (`activity_id`) [0m
+  [1m[35m (237.4ms)[0m  CREATE INDEX `index_comments_on_user_id` USING btree ON `comments` (`user_id`) 
+  [1m[36m (152.6ms)[0m  [1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `activity_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (294.0ms)[0m  CREATE INDEX `index_photos_on_activity_id` USING btree ON `photos` (`activity_id`) 
+  [1m[36m (187.0ms)[0m  [1mCREATE INDEX `index_photos_on_user_id` USING btree ON `photos` (`user_id`) [0m
+  [1m[35m (230.4ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `logged_in` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (49.5ms)[0m  [1mCREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (50.7ms)[0m  CREATE INDEX `index_votes_on_activity_id` USING btree ON `votes` (`activity_id`) 
+  [1m[36m (170.0ms)[0m  [1mCREATE INDEX `index_votes_on_user_id` USING btree ON `votes` (`user_id`) [0m
+  [1m[35m (170.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (288.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.8ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (19.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140517203541')[0m
+  [1m[35m (19.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140511200326')
+  [1m[36m (46.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140515201251')[0m
+  [1m[35m (8.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140516002720')
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140517203347')[0m
+  [1m[35m (9.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140515203328')
+  [1m[36m (7.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140516003830')[0m
+  [1m[35m (8.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140516005605')
+  [1m[36m (8.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140516005036')[0m
+  [1m[35m (9.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140516004621')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (20.6ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Sean B', '2014-05-22 22:03:44')[0m
+  [1m[35m (123.0ms)[0m  COMMIT
+  [1m[36m (1.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Hannah C', '2014-05-22 22:03:44')
+  [1m[36m (91.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Bonnie Q', '2014-05-22 22:03:44')[0m
+  [1m[35m (15.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Charlie C', '2014-05-22 22:03:44')
+  [1m[36m (10.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Yanli W', '2014-05-22 22:03:44')[0m
+  [1m[35m (46.4ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Ozzie T', '2014-05-22 22:03:44')
+  [1m[36m (13.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:44', 0, 'Nico P', '2014-05-22 22:03:44')[0m
+  [1m[35m (9.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:03:45', 'Outdoors', '2014-05-22 22:03:45')
+  [1m[36m (51.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:03:45', 'Art', '2014-05-22 22:03:45')[0m
+  [1m[35m (215.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:03:45', 'Activity', '2014-05-22 22:03:45')
+  [1m[36m (108.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (4.9ms)[0m  BEGIN
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'Sun God statue', 0, 0, 'Sun God', '2014-05-22 22:03:46')[0m
+  [1m[35m (50.0ms)[0m  COMMIT
+  [1m[36m (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'A windy path in the design of a snake leading to Giesel from Warren', 0, 0, 'Snake Path', '2014-05-22 22:03:46')
+  [1m[36m (157.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'A beach near campus. Some areas clothing optional', 0, 0, 'Black\'s Beach', '2014-05-22 22:03:46')[0m
+  [1m[35m (24.0ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'A house on top of EBU1', 0, 0, 'Fallen Star', '2014-05-22 22:03:46')
+  [1m[36m (19.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'Geocaches near UCSD', 0, 0, 'Geocache', '2014-05-22 22:03:46')[0m
+  [1m[35m (15.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', '', 0, 0, 'Giraffe Net', '2014-05-22 22:03:46')
+  [1m[36m (91.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'Dr. Seuss and the Cat in the Hat near Giesel', 0, 0, 'Dr. Seuss statue', '2014-05-22 22:03:46')[0m
+  [1m[35m (34.4ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:03:46', 'Official campus trails', 0, 0, 'Trails', '2014-05-22 22:03:46')
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (1, 2)[0m
+  [1m[35m (51.8ms)[0m  COMMIT
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (2, 2)
+  [1m[36m (17.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (3, 1)[0m
+  [1m[35m (11.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (3, 3)
+  [1m[36m (47.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (4, 2)[0m
+  [1m[35m (11.0ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (5, 1)
+  [1m[36m (21.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (5, 3)[0m
+  [1m[35m (85.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (6, 2)
+  [1m[36m (17.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (7, 2)[0m
+  [1m[35m (10.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (8, 1)
+  [1m[36m (46.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (8, 3)[0m
+  [1m[35m (6.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (1, 'Don\'t poop under the Sun God troll. Downvoting', '2014-05-22 22:03:47', '2014-05-22 22:03:47', 1)
+  [1m[36m (47.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (2, 'Snake path is a real thing, leads to Geisel coming from Warren mall.', '2014-05-22 22:03:47', '2014-05-22 22:03:47', 2)[0m
+  [1m[35m (23.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (5, 'Lots of geocaches around campus', '2014-05-22 22:03:47', '2014-05-22 22:03:47', 3)
+  [1m[36m (15.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (4, 'Fallen Star on top of EBU1 in Warren, check for visiting hours online', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 4)[0m
+  [1m[35m (26.3ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'wtf if the giraffe net???', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 5)
+  [1m[36m (48.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'the big blue useless net thing walking from library walk towards mandeville', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 6)[0m
+  [1m[35m (42.3ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'oooh that thing. is it to catch the trees from falling?', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 5)
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'no..its art. apparently the top of the net is level while the posts spans different heights, therefore art', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 6)[0m
+  [1m[35m (7.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'o really? i dont get it. are you sure?', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 5)
+  [1m[36m (9.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'no, someone told me that and i decided to believe them', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 6)[0m
+  [1m[35m (39.9ms)[0m  COMMIT
+  [1m[36m (2.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (6, 'kk ty', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 5)
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'How many trails?', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 7)[0m
+  [1m[35m (77.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'here are the trails http://blink.ucsd.edu/HR/services/support/health/walk/maps.html', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 1)
+  [1m[36m (11.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (8, 'thanks +1', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 7)[0m
+  [1m[35m (6.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'Are there naked people at blacks beach?', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 7)
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'There is a portion of the beach that is clothing optional.', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 4)[0m
+  [1m[35m (32.1ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, 'Abandon all hope, ye who enter here', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 5)
+  [1m[36m (49.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (3, '+1', '2014-05-22 22:03:48', '2014-05-22 22:03:48', 6)[0m
+  [1m[35m (16.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:03:48', 'Artistic Integrity', 'See all of the art structures on campus', '2014-05-22 22:03:48')
+  [1m[36m (46.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:03:48', 'Outdoorsperson', 'Visit all of the outdoor sights on and around campus', '2014-05-22 22:03:48')[0m
+  [1m[35m (82.3ms)[0m  COMMIT
+  [1m[36m (2.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (24.1ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:03:48', 'Gotta Geocache Them All', 'Find all the geocaches on campus', '2014-05-22 22:03:48')
+  [1m[36m (81.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (6.8ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 1)[0m
+  [1m[35m (28.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 2)
+  [1m[36m (29.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 3)[0m
+  [1m[35m (34.2ms)[0m  COMMIT
+  [1m[36m (9.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 4)
+  [1m[36m (15.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', -1, '2014-05-22 22:03:49', 5)[0m
+  [1m[35m (7.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', -1, '2014-05-22 22:03:49', 6)
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (1, '2014-05-22 22:03:49', -1, '2014-05-22 22:03:49', 7)[0m
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 1)
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 2)[0m
+  [1m[35m (24.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 3)
+  [1m[36m (53.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (14.1ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:49', 1, '2014-05-22 22:03:49', 4)[0m
+  [1m[35m (118.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:50', -1, '2014-05-22 22:03:50', 5)
+  [1m[36m (10.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (6.4ms)[0m  BEGIN
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:50', -1, '2014-05-22 22:03:50', 6)[0m
+  [1m[35m (10.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (2, '2014-05-22 22:03:50', -1, '2014-05-22 22:03:50', 7)
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1[0m
+  [1m[35mCategory Load (3.3ms)[0m  SELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (11.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Sean B', '2014-05-22 22:04:40')[0m
+  [1m[35m (23.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Hannah C', '2014-05-22 22:04:40')
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Bonnie Q', '2014-05-22 22:04:40')[0m
+  [1m[35m (104.4ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Charlie C', '2014-05-22 22:04:40')
+  [1m[36m (45.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Yanli W', '2014-05-22 22:04:40')[0m
+  [1m[35m (13.4ms)[0m  COMMIT
+  [1m[36m (5.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Ozzie T', '2014-05-22 22:04:40')
+  [1m[36m (99.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`created_at`, `logged_in`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:40', 0, 'Nico P', '2014-05-22 22:04:40')[0m
+  [1m[35m (79.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:04:41', 'Outdoors', '2014-05-22 22:04:41')
+  [1m[36m (916.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (9.5ms)[0m  BEGIN
+  [1m[36mSQL (218.0ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:04:42', 'Art', '2014-05-22 22:04:42')[0m
+  [1m[35m (257.0ms)[0m  COMMIT
+  [1m[36m (5.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (63.0ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `updated_at`) VALUES ('2014-05-22 22:04:43', 'Activity', '2014-05-22 22:04:43')
+  [1m[36m (352.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:44', 'Sun God statue', 0, 0, 'Sun God', '2014-05-22 22:04:44')[0m
+  [1m[35m (78.7ms)[0m  COMMIT
+  [1m[36m (5.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:44', 'A windy path in the design of a snake leading to Giesel from Warren', 0, 0, 'Snake Path', '2014-05-22 22:04:44')
+  [1m[36m (388.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (114.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:45', 'A beach near campus. Some areas clothing optional', 0, 0, 'Black\'s Beach', '2014-05-22 22:04:45')[0m
+  [1m[35m (271.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.9ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:45', 'A house on top of EBU1', 0, 0, 'Fallen Star', '2014-05-22 22:04:45')
+  [1m[36m (122.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:45', 'Geocaches near UCSD', 0, 0, 'Geocache', '2014-05-22 22:04:45')[0m
+  [1m[35m (184.1ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (81.5ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:45', '', 0, 0, 'Giraffe Net', '2014-05-22 22:04:45')
+  [1m[36m (342.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:46', 'Dr. Seuss and the Cat in the Hat near Giesel', 0, 0, 'Dr. Seuss statue', '2014-05-22 22:04:46')[0m
+  [1m[35m (18.2ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO `activities` (`created_at`, `description`, `loc_x`, `loc_y`, `name`, `updated_at`) VALUES ('2014-05-22 22:04:46', 'Official campus trails', 0, 0, 'Trails', '2014-05-22 22:04:46')
+  [1m[36m (95.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (6.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (9, 5)[0m
+  [1m[35m (98.8ms)[0m  COMMIT
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (2.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (10, 5)
+  [1m[36m (145.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (11, 4)[0m
+  [1m[35m (94.2ms)[0m  COMMIT
+  [1m[36m (3.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (11, 6)
+  [1m[36m (27.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (12, 5)[0m
+  [1m[35m (107.0ms)[0m  COMMIT
+  [1m[36m (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (6.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (13, 4)
+  [1m[36m (180.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (13, 6)[0m
+  [1m[35m (128.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (1.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (14, 5)
+  [1m[36m (66.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.7ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (15, 5)[0m
+  [1m[35m (120.2ms)[0m  COMMIT
+  [1m[36m (1.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (16, 4)
+  [1m[36m (34.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `activities_categories` (`activity_id`, `category_id`) VALUES (16, 6)[0m
+  [1m[35m (22.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (9, 'Don\'t poop under the Sun God troll. Downvoting', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 8)
+  [1m[36m (35.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (10, 'Snake path is a real thing, leads to Geisel coming from Warren mall.', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 9)[0m
+  [1m[35m (7.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (13, 'Lots of geocaches around campus', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 10)
+  [1m[36m (99.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (12, 'Fallen Star on top of EBU1 in Warren, check for visiting hours online', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 11)[0m
+  [1m[35m (21.2ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'wtf if the giraffe net???', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 12)
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'the big blue useless net thing walking from library walk towards mandeville', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 13)[0m
+  [1m[35m (41.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'oooh that thing. is it to catch the trees from falling?', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 12)
+  [1m[36m (13.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'no..its art. apparently the top of the net is level while the posts spans different heights, therefore art', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 13)[0m
+  [1m[35m (12.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'o really? i dont get it. are you sure?', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 12)
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'no, someone told me that and i decided to believe them', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 13)[0m
+  [1m[35m (69.9ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (14, 'kk ty', '2014-05-22 22:04:48', '2014-05-22 22:04:48', 12)
+  [1m[36m (23.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (16, 'How many trails?', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 14)[0m
+  [1m[35m (25.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (16, 'here are the trails http://blink.ucsd.edu/HR/services/support/health/walk/maps.html', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 8)
+  [1m[36m (92.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (16, 'thanks +1', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 14)[0m
+  [1m[35m (14.9ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (11, 'Are there naked people at blacks beach?', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 14)
+  [1m[36m (77.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (11, 'There is a portion of the beach that is clothing optional.', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 11)[0m
+  [1m[35m (29.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (11, 'Abandon all hope, ye who enter here', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 12)
+  [1m[36m (49.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `comments` (`activity_id`, `content`, `created_at`, `updated_at`, `user_id`) VALUES (11, '+1', '2014-05-22 22:04:49', '2014-05-22 22:04:49', 13)[0m
+  [1m[35m (13.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:04:49', 'Artistic Integrity', 'See all of the art structures on campus', '2014-05-22 22:04:49')
+  [1m[36m (575.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (7.7ms)[0m  [1mINSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:04:50', 'Outdoorsperson', 'Visit all of the outdoor sights on and around campus', '2014-05-22 22:04:50')[0m
+  [1m[35m (19.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.3ms)[0m  INSERT INTO `badges` (`created_at`, `name`, `requirements`, `updated_at`) VALUES ('2014-05-22 22:04:50', 'Gotta Geocache Them All', 'Find all the geocaches on campus', '2014-05-22 22:04:50')
+  [1m[36m (45.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:50', 1, '2014-05-22 22:04:50', 8)[0m
+  [1m[35m (14.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:50', 1, '2014-05-22 22:04:50', 9)
+  [1m[36m (108.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (110.5ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 10)[0m
+  [1m[35m (56.8ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 11)
+  [1m[36m (52.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 12)[0m
+  [1m[35m (24.1ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 13)
+  [1m[36m (50.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (9, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 14)[0m
+  [1m[35m (27.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 8)
+  [1m[36m (72.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 9)[0m
+  [1m[35m (60.3ms)[0m  COMMIT
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 10)
+  [1m[36m (67.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', 1, '2014-05-22 22:04:51', 11)[0m
+  [1m[35m (30.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 12)
+  [1m[36m (19.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 13)[0m
+  [1m[35m (9.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `votes` (`activity_id`, `created_at`, `score`, `updated_at`, `user_id`) VALUES (10, '2014-05-22 22:04:51', -1, '2014-05-22 22:04:51', 14)
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:08:27 -0400
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:09:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ActivitiesController#get_activities as HTML
+  [1m[35mActivity Load (1.3ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1 ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1 ORDER BY `categories`.`id` ASC LIMIT 1  [["activity_id", 1]]
+Completed 500 Internal Server Error in 998ms
+
+NoMethodError (undefined method `category=' for #<Activity:0x00000003b16ec8>):
+  app/controllers/activities_controller.rb:35:in `block in get_activities'
+  app/controllers/activities_controller.rb:34:in `get_activities'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.3ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (385.7ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:09:51 -0400
+Processing by ActivitiesController#get_activities as HTML
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT `activities`.* FROM `activities`[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1 ORDER BY `categories`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1 ORDER BY `categories`.`id` ASC LIMIT 1[0m  [["activity_id", 1]]
+Completed 500 Internal Server Error in 413ms
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `category'):
+  app/controllers/activities_controller.rb:35:in `block in get_activities'
+  app/controllers/activities_controller.rb:34:in `get_activities'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (199.0ms)
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1[0m
+  [1m[35mCategory Load (73.9ms)[0m  SELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1
+  [1m[36mActivity Load (1.0ms)[0m  [1mSELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1[0m
+  [1m[35mActivity Load (2.0ms)[0m  SELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1
+  [1m[36mActivity Load (2.8ms)[0m  [1mSELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:15:26 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.9ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 620ms (Views: 14.4ms | ActiveRecord: 154.2ms)
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1[0m
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:20:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (1.7ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 1882ms (Views: 4.0ms | ActiveRecord: 337.1ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:21:38 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (61.8ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 584ms (Views: 70.4ms | ActiveRecord: 192.8ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:22:33 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 500 Internal Server Error in 606ms
+
+NoMethodError (undefined method `categories' for #<Class:0x007f36506258f8>):
+  app/serializers/activity_serializer.rb:5:in `category'
+  app/controllers/activities_controller.rb:33:in `get_activities'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (394.2ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:23:03 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (4.8ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 500 Internal Server Error in 893ms
+
+NoMethodError (undefined method `categories' for #<ActivitySerializer:0x007f36503099d0>):
+  app/serializers/activity_serializer.rb:5:in `category'
+  app/controllers/activities_controller.rb:33:in `get_activities'
+
+
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/libexec/openshift/cartridges/c9-0.1/root/lib/ruby/gems/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (502.1ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:23:17 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 689ms (Views: 94.6ms | ActiveRecord: 295.2ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:24:49 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 709ms (Views: 45.8ms | ActiveRecord: 309.2ms)
+
+
+Started GET "/activities/get_activities" for 127.3.61.1 at 2014-05-22 18:26:10 -0400
+Processing by ActivitiesController#get_activities as HTML
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from get_activities at /var/lib/stickshift/536a545a5004465690000128/app-root/data/855262/app/controllers/activities_controller.rb:32)
+  [1m[35mActivity Load (0.6ms)[0m  SELECT `activities`.* FROM `activities`
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT `categories`.*, `t0`.`activity_id` AS ar_association_key_name FROM `categories` INNER JOIN `activities_categories` `t0` ON `categories`.`id` = `t0`.`category_id` WHERE `t0`.`activity_id` IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)[0m
+Completed 200 OK in 665ms (Views: 21.5ms | ActiveRecord: 123.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCompletedActivities (20140522232101)
+  [1m[35m (198.0ms)[0m  CREATE TABLE `completed_activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (100.6ms)[0m  [1mCREATE INDEX `index_completed_activities_on_user_id` ON `completed_activities` (`user_id`) [0m
+  [1m[35m (30.4ms)[0m  CREATE INDEX `index_completed_activities_on_activity_id` ON `completed_activities` (`activity_id`) 
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140522232101')
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (197.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`user_id` = 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCompletedActivity Load (2.6ms)[0m  [1mSELECT `completed_activities`.* FROM `completed_activities`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateStatuses (20140522233705)
+  [1m[35m (54.4ms)[0m  CREATE TABLE `statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `status` int(11), `user_id` int(11), `activity_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (62.4ms)[0m  [1mCREATE INDEX `index_statuses_on_user_id` ON `statuses` (`user_id`) [0m
+  [1m[35m (54.9ms)[0m  CREATE INDEX `index_statuses_on_activity_id` ON `statuses` (`activity_id`) 
+  [1m[36m (9.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140522233705')
+  [1m[36m (89.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mStatus Load (0.6ms)[0m  SELECT `statuses`.* FROM `statuses`
+  [1m[36mStatus Load (0.6ms)[0m  [1mSELECT `statuses`.* FROM `statuses` ORDER BY `statuses`.`id` ASC LIMIT 1[0m
+  [1m[35mStatus Load (0.7ms)[0m  SELECT `statuses`.* FROM `statuses` ORDER BY `statuses`.`id` ASC LIMIT 1
+  [1m[36mVote Load (1.0ms)[0m  [1mSELECT `votes`.* FROM `votes` WHERE `votes`.`user_id` = 1[0m
+  [1m[35mBadge Load (0.7ms)[0m  SELECT `badges`.* FROM `badges` INNER JOIN `badges_users` ON `badges`.`id` = `badges_users`.`badge_id` WHERE `badges_users`.`user_id` = 1
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mActivity Load (10.1ms)[0m  SELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1
+  [1m[36mCategory Load (80.9ms)[0m  [1mSELECT `categories`.* FROM `categories` INNER JOIN `activities_categories` ON `categories`.`id` = `activities_categories`.`category_id` WHERE `activities_categories`.`activity_id` = 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` INNER JOIN `votes` ON `users`.`id` = `votes`.`user_id` WHERE `votes`.`activity_id` = 1

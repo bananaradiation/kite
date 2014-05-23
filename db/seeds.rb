@@ -29,13 +29,21 @@ a7 = Activity.create :name => 'Dr. Seuss statue', :description => 'Dr. Seuss and
 a8 = Activity.create :name => 'Trails', :description => 'Official campus trails', :loc_x => 0.0 , :loc_y => 0.0
 
 a1.categories << cat2
+a1.save
 a2.categories << cat2
+a2.save
 a3.categories << cat1 << cat3
+a3.save
 a4.categories << cat2
+a4.save
 a5.categories << cat1 << cat3
+a5.save
 a6.categories << cat2 
+a6.save
 a7.categories << cat2
+a7.save
 a8.categories << cat1 << cat3
+a8.save
 
 c1 = Comment.create :content => 'Don\'t poop under the Sun God troll. Downvoting', :user => u1, :activity => a1
 c2 = Comment.create :content => 'Snake path is a real thing, leads to Geisel coming from Warren mall.', :user => u2, :activity => a2

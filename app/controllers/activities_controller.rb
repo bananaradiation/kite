@@ -29,13 +29,13 @@ class ActivitiesController < ApplicationController
     end
     
     def get_activities
-        @activities = Activity.all
+        @activities = Activity.includes(:categories).all
         render :json => @activities
     end
     
     def get_activity
         @activity = Activity.find(params[:activity_id])
-        render :json => @activity
+        render :json => {:activity => @activity}
     end
 
 end

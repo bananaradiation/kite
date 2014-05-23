@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517203541) do
+ActiveRecord::Schema.define(version: 20140522233705) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 20140517203541) do
   add_index "comments", ["activity_id"], name: "index_comments_on_activity_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "completed_activities", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "completed_activities", ["activity_id"], name: "index_completed_activities_on_activity_id", using: :btree
+  add_index "completed_activities", ["user_id"], name: "index_completed_activities_on_user_id", using: :btree
+
   create_table "photos", force: true do |t|
     t.string   "url"
     t.integer  "activity_id"
@@ -72,6 +82,17 @@ ActiveRecord::Schema.define(version: 20140517203541) do
 
   add_index "photos", ["activity_id"], name: "index_photos_on_activity_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+
+  create_table "statuses", force: true do |t|
+    t.integer  "status"
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "statuses", ["activity_id"], name: "index_statuses_on_activity_id", using: :btree
+  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
