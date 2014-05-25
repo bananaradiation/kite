@@ -24,9 +24,9 @@ class ActivitiesController < ApplicationController
             :loc_y => params[:activity][:loc_y])
 
             if @activity.save
-                render action: 'show', status: :created, location: @activity
+                return true
             else
-                render json: @activity.errors, status: :unprocessable_entity
+                return false
             end
         end
     end
