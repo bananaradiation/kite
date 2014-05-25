@@ -1,3 +1,8 @@
+# category {
+# 	id,				//Category ID
+# 	name			//Category name
+# }
+
 class Category < ActiveRecord::Base
-    has_and_belongs_to_many :activities
+    has_many :activities
 end

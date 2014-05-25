@@ -15,35 +15,18 @@ u5 = User.create :name => 'Yanli W', :logged_in => false
 u6 = User.create :name => 'Ozzie T', :logged_in => false
 u7 = User.create :name => 'Nico P', :logged_in => false
 
-cat1 = Category.create :description => 'Outdoors'
-cat2 = Category.create :description => 'Art'
-cat3 = Category.create :description => 'Activity'
+outdoors = Category.create :description => 'Outdoors'
+art = Category.create :description => 'Art'
+activity = Category.create :description => 'Activity'
 
-a1 = Activity.create :name => 'Sun God', :description => 'Sun God statue', :loc_x => 0.0 , :loc_y => 0.0
-a2 = Activity.create :name => 'Snake Path', :description => 'A windy path in the design of a snake leading to Giesel from Warren', :loc_x => 0.0 , :loc_y => 0.0
-a3 = Activity.create :name => 'Black\'s Beach', :description => 'A beach near campus. Some areas clothing optional', :loc_x => 0.0 , :loc_y => 0.0
-a4 = Activity.create :name => 'Fallen Star', :description => 'A house on top of EBU1', :loc_x => 0.0 , :loc_y => 0.0
-a5 = Activity.create :name => 'Geocache', :description => 'Geocaches near UCSD', :loc_x => 0.0 , :loc_y => 0.0
-a6 = Activity.create :name => 'Giraffe Net', :description => '', :loc_x => 0.0 , :loc_y => 0.0
-a7 = Activity.create :name => 'Dr. Seuss statue', :description => 'Dr. Seuss and the Cat in the Hat near Giesel', :loc_x => 0.0 , :loc_y => 0.0
-a8 = Activity.create :name => 'Trails', :description => 'Official campus trails', :loc_x => 0.0 , :loc_y => 0.0
-
-a1.categories << cat2
-a1.save
-a2.categories << cat2
-a2.save
-a3.categories << cat1 << cat3
-a3.save
-a4.categories << cat2
-a4.save
-a5.categories << cat1 << cat3
-a5.save
-a6.categories << cat2 
-a6.save
-a7.categories << cat2
-a7.save
-a8.categories << cat1 << cat3
-a8.save
+a1 = Activity.create :name => 'Sun God', :description => 'Sun God statue', :loc_x => 0.0 , :loc_y => 0.0, :category => art, :user => u1
+a2 = Activity.create :name => 'Snake Path', :description => 'A windy path in the design of a snake leading to Giesel from Warren', :loc_x => 0.0 , :loc_y => 0.0, :category => art, :user => u2
+a3 = Activity.create :name => 'Black\'s Beach', :description => 'A beach near campus. Some areas clothing optional', :loc_x => 0.0 , :loc_y => 0.0, :category => outdoors, :user => u3
+a4 = Activity.create :name => 'Fallen Star', :description => 'A house on top of EBU1', :loc_x => 0.0 , :loc_y => 0.0, :category => art, :user => u4
+a5 = Activity.create :name => 'Geocache', :description => 'Geocaches near UCSD', :loc_x => 0.0 , :loc_y => 0.0, :category => outdoors, :user => u5
+a6 = Activity.create :name => 'Giraffe Net', :description => '', :loc_x => 0.0 , :loc_y => 0.0, :category => art, :user => u6
+a7 = Activity.create :name => 'Dr. Seuss statue', :description => 'Dr. Seuss and the Cat in the Hat near Giesel', :loc_x => 0.0 , :loc_y => 0.0, :category => art, :user => u7
+a8 = Activity.create :name => 'Trails', :description => 'Official campus trails', :loc_x => 0.0 , :loc_y => 0.0, :category => activity, :user => u1
 
 c1 = Comment.create :content => 'Don\'t poop under the Sun God troll. Downvoting', :user => u1, :activity => a1
 c2 = Comment.create :content => 'Snake path is a real thing, leads to Geisel coming from Warren mall.', :user => u2, :activity => a2

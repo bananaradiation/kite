@@ -1,15 +1,30 @@
+# activity {
+# 	id,				//Activity ID
+# 	name,			//Activity name
+# 	description,	//Activity description
+# 	location,		//Activity location string ***
+# 	category,		//Category object
+# 	photos[hrefs],	//Array of photo URLs
+# 	num_votes,		//Total number of votes for this activity ***
+# 	avg_vote,		//Average vote rating ***
+# }
+
+
 class Activity < ActiveRecord::Base
     has_many :comments
     has_many :votes
     has_many :photos
-    has_many :users, through: :comments
-    has_many :users, through: :votes 
-    has_and_belongs_to_many :categories
+    belongs_to :category
+    belongs_to :user
     
     
-    def getVoteScore
+    def getRating
         self.votes.sum(:score)
     end
     
-    
+
+	def getAverage
+		self.votes.average(:score)
+	end    
+
 end

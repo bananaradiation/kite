@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+gem 'composite_primary_keys'
+
 gem 'active_model_serializers'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'pg'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
