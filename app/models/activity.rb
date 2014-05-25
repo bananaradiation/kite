@@ -22,9 +22,15 @@ class Activity < ActiveRecord::Base
         self.votes.sum(:score)
     end
     
+    def getVoteCount
+        self.votes.count
+    end
 
 	def getAverage
 		self.votes.average(:score)
 	end    
 
+    def getVoteOfUser(user)
+        self.votes.where(:user => user)[0].score
+    end
 end

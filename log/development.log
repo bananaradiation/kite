@@ -14215,3 +14215,19 @@ Migrating to CreateActivityStatuses (20140525040747)
   [1m[36mActivity Load (0.2ms)[0m  [1mSELECT `activities`.* FROM `activities` WHERE `activities`.`category_id` = 1 AND `activities`.`user_id` = 3[0m
   [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1
   [1m[36mActivityStatus Load (1.0ms)[0m  [1mSELECT `activity_statuses`.* FROM `activity_statuses` WHERE `activity_statuses`.`user_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT `votes`.* FROM `votes` WHERE `votes`.`user_id` = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `votes` WHERE `votes`.`user_id` = 1[0m
+  [1m[35mActivity Load (0.1ms)[0m  SELECT `activities`.* FROM `activities` ORDER BY `activities`.`id` ASC LIMIT 1
+  [1m[36mVote Load (0.7ms)[0m  [1mSELECT `votes`.* FROM `votes` WHERE `votes`.`activity_id` = 1 AND `votes`.`user_id` = 1[0m
+  [1m[35mVote Load (0.1ms)[0m  SELECT `votes`.* FROM `votes` WHERE `votes`.`activity_id` = 1 AND `votes`.`user_id` = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddEmailAndPasswordToUser (20140525044816)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddEmailAndPasswordToUser (20140525044816)
+  [1m[35m (5.7ms)[0m  ALTER TABLE `users` ADD `email` varchar(255)
+  [1m[36m (12.2ms)[0m  [1mALTER TABLE `users` ADD `password` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140525044816')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
