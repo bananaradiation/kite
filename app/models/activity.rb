@@ -17,7 +17,10 @@ class Activity < ActiveRecord::Base
     belongs_to :category
     belongs_to :user
     
-    
+    def self.getActivitiesBy(category, user)
+        Activity.where(:category_id => category, :user_id => user)
+    end 
+
     def getRating
         self.votes.sum(:score)
     end

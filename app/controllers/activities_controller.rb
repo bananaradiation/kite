@@ -38,7 +38,7 @@ class ActivitiesController < ApplicationController
     # user_id, category_id        //filter on category or user ID if relevant
     # Returns: activities[activity]
     def get_activities
-        @activities = Activity.where(:category => params[:category_id], :user => params[:user_id])
+        @activities = Activity.getActivitiesBy(params[:category_id], params[:user_id])
         render :json => @activities
     end
 
