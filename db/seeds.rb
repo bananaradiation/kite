@@ -6,8 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+b1 = Badge.create :name => 'Artistic Integrity', :requirements => 'See all of the art structures on campus'
+b2 = Badge.create :name => 'Outdoorsperson', :requirements => 'Visit all of the outdoor sights on and around campus'
+b3 = Badge.create :name => 'Gotta Geocache Them All', :requirements => 'Find all the geocaches on campus'
 
-u1 = User.create :name => 'Sean B', :logged_in => false
+
+u1 = User.create :name => 'Sean B', :logged_in => false, :badges => [b1, b2]
 u2 = User.create :name => 'Hannah C', :logged_in => false
 u3 = User.create :name => 'Bonnie Q', :logged_in => false
 u4 = User.create :name => 'Charlie C', :logged_in => false
@@ -46,10 +50,6 @@ c16 = Comment.create :content => 'Are there naked people at blacks beach?', :use
 c17 = Comment.create :content => 'There is a portion of the beach that is clothing optional.', :user => u4, :activity => a3
 c18 = Comment.create :content => 'Abandon all hope, ye who enter here', :user => u5, :activity => a3
 c19 = Comment.create :content => '+1', :user => u6, :activity => a3
-
-b1 = Badge.create :name => 'Artistic Integrity', :requirements => 'See all of the art structures on campus'
-b2 = Badge.create :name => 'Outdoorsperson', :requirements => 'Visit all of the outdoor sights on and around campus'
-b3 = Badge.create :name => 'Gotta Geocache Them All', :requirements => 'Find all the geocaches on campus'
 
 
 v1 = Vote.create :score => 1, :user => u1, :activity => a1

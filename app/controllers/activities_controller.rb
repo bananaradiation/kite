@@ -1,4 +1,16 @@
+# activity {
+#     id,             //Activity ID
+#     name,           //Activity name
+#     description,    //Activity description
+#     location,       //Activity location string ***
+#     category,       //Category object
+#     photos[hrefs],  //Array of photo URLs
+#     num_votes,      //Total number of votes for this activity ***
+#     avg_vote,       //Average vote rating ***
+# }
+
 class ActivitiesController < ApplicationController
+
 
     @@SAVE = 2
     @@COMPLETE = 1
@@ -38,7 +50,7 @@ class ActivitiesController < ApplicationController
     # user_id, category_id        //filter on category or user ID if relevant
     # Returns: activities[activity]
     def get_activities
-        @activities = Activity.getActivitiesBy(params[:category_id], params[:user_id])
+        @activities = Activity.getActivitiesBy2(params[:category_id], params[:user_id])
         render :json => @activities
     end
 

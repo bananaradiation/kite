@@ -16,9 +16,27 @@ class Activity < ActiveRecord::Base
     has_many :photos
     belongs_to :category
     belongs_to :user
+
+    def self.getActivity(activity)
+        @activity = Activity.find(activity)
+    end
     
-    def self.getActivitiesBy(category, user)
-        Activity.where(:category_id => category, :user_id => user)
+    def self.getActivitiesBy2(category, user)
+        if category != nil and user != nil
+            Activity.where(:category_id => category, :user_id => user)
+        else
+            Activity.all
+        end
+
+    end 
+
+    def self.getActivitiesBy1(category)
+        if category != nil
+            Activity.where(:category_id => category)
+        else
+            Activity.all
+        end
+
     end 
 
     def getRating
@@ -29,11 +47,20 @@ class Activity < ActiveRecord::Base
         self.votes.count
     end
 
-	def getAverage
-		self.votes.average(:score)
-	end    
 
     def getVoteOfUser(user)
         self.votes.where(:user => user)[0].score
     end
+
+    def update
+        self.avg_vote = self.votes.average(:score)
+        self.rating = self.getRating
+        self.save
+    end
+
+    def updateCount
+        self.num_votes = self.getVoteCount
+        self.save
+    end
+
 end

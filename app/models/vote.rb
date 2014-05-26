@@ -2,15 +2,21 @@ class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :activity
   
-    def self.canVote?(user, activity)
-        return Vote.where(:user_id => user, :activity_id => activity).empty?
+    def self.hasVoted?(user_id, activity_id)
+        @vote = Vote.where(:user_id => user_id, :activity_id => activity_id)[0]
+        @vote.blank?
     end
 
-    def voteOn(activity, user, rating)
-    	if Vote.canVote?(user, activity)
-    		Vote.create(:activity => activity, :user => user, :score => rating)
-    		return true
+    def self.voteOn(activity_id, user_id, rating)
+        @activity = Activity.find(activity_id)
+    	if Vote.hasVoted?(user_id, activity_id) == false
+    		Vote.create(:activity_id => activity_id, :user_id => user_id, :score => rating)
+        else
+            @vote = Vote.where(:activity_id => activity_id, :user_id => user_id)[0] 
+            @vote.score = rating
+            @vote.save
+            @activity.updateCount
     	end
-    	return false
+        @activity.update
     end
 end

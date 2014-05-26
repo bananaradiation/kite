@@ -1,22 +1,15 @@
 class UsersController < ApplicationController
 
-    def index
-        @user1 = User.first
-        @user2 = User.last
-        respond_to do |format|
-            format.html
-            format.json {
-                render :json => {
-                    :user1 => @user1,
-                    :user2 => @user2
-                }
-            }
-        end
-    end
-
     def login
         user = User.first
         render :json => user
+    end
+
+    def get_profile
+        @user = User.find(params[:id])
+        @profile = []   
+        @profile << @user.id << @user.name << @user.badges << @user.saved << user.completed
+        render :json => @profile
     end
 end
 

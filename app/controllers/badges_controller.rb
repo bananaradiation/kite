@@ -1,5 +1,6 @@
 class BadgeController < ApplicationController
 
+
 	def set_photo
 		@photo = params[:url]
 		@badge = Badge.find(params[:id])

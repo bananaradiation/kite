@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526180505) do
+ActiveRecord::Schema.define(version: 20140526220750) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20140526180505) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "user_id"
+    t.integer  "rating",                                default: 0
+    t.decimal  "avg_vote",    precision: 10, scale: 10, default: 0.0
+    t.integer  "num_votes",                             default: 0
   end
 
   add_index "activities", ["category_id"], name: "index_activities_on_category_id", using: :btree
