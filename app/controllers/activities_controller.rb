@@ -1,6 +1,8 @@
 class ActivitiesController < ApplicationController
+
     @@SAVE = 2
     @@COMPLETE = 1
+
     def index
         render 'show'
     end
@@ -28,7 +30,6 @@ class ActivitiesController < ApplicationController
             else
                 return false
             end
-        end
     end
 
     # //Gets list of activities based on category/user filter
@@ -83,14 +84,14 @@ class ActivitiesController < ApplicationController
     # Params: user_id, activity_id
     # Returns: success
     def save_activity
+        
         @status = ActivityStatus.where(:user => params[:user_id], :activity => params[:activity_id])
-
         @status = ActivityStatus.new(:user => params[:user_id], :activity => params[:activity_id], :status => @@SAVE)
+
         if @status.save!
             return true
         end
         return false
-
     end
 
 end
