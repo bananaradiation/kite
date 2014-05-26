@@ -60,6 +60,7 @@ class ActivitiesController < ApplicationController
         @activity = Activity.find(params[:activity_id])
         if Vote.voteOn(params[:activity_id], params[:user_id], params[:rating])
             return true
+        end
         return false
     end
 
@@ -72,6 +73,7 @@ class ActivitiesController < ApplicationController
         @status = ActivityStatus.new(:user => params[:user_id], :activity => params[:activity_id], :status => @@COMPLETE)
         if @status.save!
             return true
+        end
         return false
     end
 
@@ -86,7 +88,9 @@ class ActivitiesController < ApplicationController
         @status = ActivityStatus.new(:user => params[:user_id], :activity => params[:activity_id], :status => @@SAVE)
         if @status.save!
             return true
+        end
         return false
+
     end
 
 end
