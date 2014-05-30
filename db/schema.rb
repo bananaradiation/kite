@@ -11,30 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517203541) do
+ActiveRecord::Schema.define(version: 20140526220750) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.decimal  "loc_x"
-    t.decimal  "loc_y"
+    t.decimal  "loc_x",       precision: 10, scale: 0
+    t.decimal  "loc_y",       precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.integer  "rating",                                default: 0
+    t.decimal  "avg_vote",    precision: 10, scale: 10, default: 0.0
+    t.integer  "num_votes",                             default: 0
+  end
+
+  add_index "activities", ["category_id"], name: "index_activities_on_category_id", using: :btree
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "activity_statuses", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "activities_categories", id: false, force: true do |t|
-    t.integer "activity_id", null: false
-    t.integer "category_id", null: false
-  end
-
-  add_index "activities_categories", ["activity_id", "category_id"], name: "index_activities_categories_on_activity_id_and_category_id", using: :btree
-  add_index "activities_categories", ["category_id", "activity_id"], name: "index_activities_categories_on_category_id_and_activity_id", using: :btree
+  add_index "activity_statuses", ["activity_id"], name: "index_activity_statuses_on_activity_id", using: :btree
+  add_index "activity_statuses", ["user_id"], name: "index_activity_statuses_on_user_id", using: :btree
 
   create_table "badges", force: true do |t|
     t.string   "name"
     t.string   "requirements"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
   end
 
   create_table "badges_users", id: false, force: true do |t|
@@ -78,6 +90,8 @@ ActiveRecord::Schema.define(version: 20140517203541) do
     t.boolean  "logged_in"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password"
   end
 
   create_table "votes", force: true do |t|
