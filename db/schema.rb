@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20140526220750) do
   add_index "activities", ["category_id"], name: "index_activities_on_category_id", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
+  create_table "activities_categories", id: false, force: true do |t|
+    t.integer "activity_id", null: false
+    t.integer "category_id", null: false
+  end
+
+  add_index "activities_categories", ["activity_id", "category_id"], name: "index_activities_categories_on_activity_id_and_category_id", using: :btree
+  add_index "activities_categories", ["category_id", "activity_id"], name: "index_activities_categories_on_category_id_and_activity_id", using: :btree
+
   create_table "activity_statuses", force: true do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
@@ -74,6 +82,16 @@ ActiveRecord::Schema.define(version: 20140526220750) do
   add_index "comments", ["activity_id"], name: "index_comments_on_activity_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "completed_activities", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "completed_activities", ["activity_id"], name: "index_completed_activities_on_activity_id", using: :btree
+  add_index "completed_activities", ["user_id"], name: "index_completed_activities_on_user_id", using: :btree
+
   create_table "photos", force: true do |t|
     t.string   "url"
     t.integer  "activity_id"
@@ -84,6 +102,17 @@ ActiveRecord::Schema.define(version: 20140526220750) do
 
   add_index "photos", ["activity_id"], name: "index_photos_on_activity_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+
+  create_table "statuses", force: true do |t|
+    t.integer  "status"
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "statuses", ["activity_id"], name: "index_statuses_on_activity_id", using: :btree
+  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
