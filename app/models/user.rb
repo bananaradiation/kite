@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
     has_many :photos
     has_many :activities, through: :comments
     has_many :activities, through: :votes
-    has_many :activities, :class_name => "completed_activities"
     has_and_belongs_to_many :badges
     
 
