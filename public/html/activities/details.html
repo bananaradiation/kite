@@ -1,7 +1,6 @@
 <ng-include src="'html/activities/navbar.html'"></ng-include>
 
 <div class="container">
-
       <!-- Main component for a primary marketing message or call to action -->
         <div class="row">
             <div class="col-xs-0 col-md-2"></div>
@@ -36,20 +35,23 @@
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-xs-12">
-
                                     <p>{{activity.description}}</p>
                             </div>
+							
                             <div class="col-xs-12">
                                 <hr>
                                 <div class="well" id="map-canvas">
+									<h3>Google maps goes here</h3>
                                     <google-map center="map.center" zoom="map.zoom"></google-map>
                                 </div>
                             </div>
+							
                             <div class="col-xs-12">
                                 <hr>
-                                <dir-disqus disqus-shortname="kiteapp"
-                                     disqus-identifier="google"
-                                     disqus-url="google.com">
+								<div disqus="kiteapp"></div>
+								<dir-disqus disqus-shortname="kiteapp"
+                                     disqus-identifier="{{activity.id}}"
+                                     disqus-url="http://kiteapp.com/activities/{{activity.id}}">
                                 </dir-disqus>
                                 <!-- <div id="disqus_thread"></div> -->
                                 <!-- https://github.com/kirstein/angular-disqus -->

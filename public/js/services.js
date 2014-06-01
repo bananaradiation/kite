@@ -2,6 +2,7 @@
 
 var KiteServices = angular.module('KiteServices', ['ngResource', 'ngCookies']);
 
+//Handle activity APIs
 KiteServices.factory('ActivitiesSvc', ['$resource',
 	function($resource) {
 		return {
@@ -15,12 +16,14 @@ KiteServices.factory('ActivitiesSvc', ['$resource',
 	}
 ]);
 
+//Handle users APIs
 KiteServices.factory('UsersSvc', ['$resource', 'AuthSvc',
     function($resource) {
 
     }
-])
+]);
 
+//Handle authentication
 KiteServices.factory('AuthSvc', ['$resource', 'DataSvc',
     function($resource, DataSvc) {
         var key = "user"
@@ -39,7 +42,19 @@ KiteServices.factory('AuthSvc', ['$resource', 'DataSvc',
             })
         }
     }
-])
+]);
+
+//Handle Google APIs
+var GOOGLE_API_KEY = 'AIzaSyBEvxq3OPyoS61EzLuw84NUtd8gVpbYAvY';
+KiteServices.factory('GoogleSvc', ['$resource',
+	function($resource) {
+		return {
+			resources: $resource(null, {}, {
+				geocode: {method:'GET', url:'https://maps.googleapis.com/maps/api/geocode/json', isArray:false}
+			})
+		}
+	}
+]);
 
 /* ************************************ */
 /* Data: Store app data in cookie		*/

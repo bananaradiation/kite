@@ -27,9 +27,12 @@
                             </div>
                             <div class="col-xs-12">
                                 <label>Location</label>
-                                <input class="form-control" type="text" ng-model="create_activity.data.location"/>
+                                <input class="form-control" type="text" ng-model="create_activity.data.location" ng-blur="create_activity.refresh_map()"/>
                                 <br>
-                                <google-map center="map.center" zoom="map.zoom"></google-map>
+                                <google-map center="create_activity.map.center" zoom="create_activity.map.zoom">
+									<marker coords="create_activity.map.center"></marker>
+								</google-map>
+								
                             </div>
                         </div>
 

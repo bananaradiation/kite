@@ -2,8 +2,10 @@
 
 var KiteApp = angular.module('KiteApp', ['ngRoute', 'KiteControllers', 'KiteServices', 'google-maps', 'ngDisqus']);
 
-KiteApp.config(['$routeProvider',
-	function($routeProvider) {
+window.disqus_shortname = 'kiteapp';
+
+KiteApp.config(['$routeProvider', '$locationProvider', '$disqusProvider',
+	function($routeProvider, $locationProvider, $disqusProvider) {
 		$routeProvider.when('/', {
 			templateUrl: 'html/activities/main_list.html',
 			controller: 'ActivitiesCtrl'
@@ -33,5 +35,9 @@ KiteApp.config(['$routeProvider',
 		// 	controller: 'PrintsCtrl'
 		// }).
 		otherwise({redirectTo:'/'});
+		
+		//$locationProvider.html5Mode(true);
+		$locationProvider.hashPrefix('!');
+		$disqusProvider.setShortname('kiteapp');
 	}
 ])

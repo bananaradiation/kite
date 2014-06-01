@@ -55,7 +55,8 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
-    mysql2 (0.3.16)
+    pg (0.17.1)
+    pg (0.17.1-x86-mingw32)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -110,6 +111,7 @@ GEM
 PLATFORMS
   ruby
   x64-mingw32
+  x86-mingw32
 
 DEPENDENCIES
   active_model_serializers
@@ -117,7 +119,7 @@ DEPENDENCIES
   composite_primary_keys
   jbuilder (~> 1.2)
   jquery-rails
-  mysql2
+  pg
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc

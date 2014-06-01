@@ -17,19 +17,10 @@ KiteControllers.controller('AppRootCtrl', ['$scope', 'AuthSvc',
     }
 ])
 
-KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc',
-    function($scope, $routeParams, ActivitiesSvc) {
+KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc', 'GoogleSvc',
+    function($scope, $routeParams, ActivitiesSvc, GoogleSvc) {
         // console.log($routeParams);
         var userID=123;
-
-        $scope.map = {
-            center: {
-                latitude: 45,
-                longitude: -73
-            },
-            draggable: true,
-            zoom: 8
-        };
 
         $scope.vote = {
             check_votability:function() {
@@ -91,9 +82,20 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                 }
             );
         }
-
+		
         $scope.create_activity = {
             data: {name: null, description: null, photos: [], location: null, category: null},
+			map: {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14},
+			refresh_map: function() {
+				GoogleSvc.resources.geocode({key:GOOGLE_API_KEY, address:$scope.create_activity.data.location}).
+				$promise.then(function(response) {
+					console.log(response);
+					$scope.create_activity.map.center.latitude = response.results[0].geometry.location.lat;
+					$scope.create_activity.map.center.longitude = response.results[0].geometry.location.lng;
+				}, function(error) {
+				});
+				
+			},
             add_activity:function() {
                 console.log($scope.create_activity)
             }
