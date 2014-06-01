@@ -5,15 +5,8 @@ var KiteControllers = angular.module('KiteControllers', []);
 //AppRoot controller
 KiteControllers.controller('AppRootCtrl', ['$scope', 'AuthSvc',
 	function($scope,AuthSvc) {
-
-    	// $scope.user = {
-     //        get_user:function() {
-     //            return AuthSvc.get_user()
-     //        }
-     //    }
-
-     $scope.user = AuthSvc.get_user()
-     console.log($scope.user)
+		$scope.user = AuthSvc.get_user()
+		console.log($scope.user)
     }
 ])
 
@@ -28,13 +21,11 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
             },
             vote_up:function(activity_id) {
                 if ($scope.vote.check_votability()) {
-                    ActivitiesSvc.resources.vote_on(
-                        {
+                    ActivitiesSvc.resources.vote_on({
                             rating:1,
                             activity_id:activity_id,
                             user_id:userID
-                        }
-                    );
+					});
                 }
             },
             vote_down:function(activity_id) {

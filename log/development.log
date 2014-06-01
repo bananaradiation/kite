@@ -24521,3 +24521,592 @@ ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map")
   Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
   Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
   Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (95.0ms)
+
+
+Started GET "/activities/get_activity?activity_id=2" for 127.0.0.1 at 2014-05-31 18:04:07 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"2"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:04:07 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (163.5ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.0.0.1 at 2014-05-31 18:04:10 -0700
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (2.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:04:10 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (97.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:04:32 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (132.5ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.0.0.1 at 2014-05-31 18:04:32 -0700
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[35mActivity Load (1.0ms)[0m  SELECT "activities".* FROM "activities"
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 ORDER BY "categories"."id" ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.0.0.1 at 2014-05-31 18:04:35 -0700
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[36mActivity Load (1.0ms)[0m  [1mSELECT "activities".* FROM "activities"[0m
+  [1m[35mCategory Load (2.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 57ms (Views: 49.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:04:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (99.5ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:04:40 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:05:04 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (150.0ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:05:04 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:08:01 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (172.0ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:08:01 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:08:06 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>1}}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:73:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (51.0ms)
+
+
+Started GET "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:08:35 -0700
+Processing by ActivitiesController#vote_on as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:73:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.5ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:10:13 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:10:13 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (182.5ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:10:17 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>1}}
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Activity without an ID):
+  app/controllers/activities_controller.rb:73:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (64.0ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:11:01 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:11:02 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (138.5ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:11:15 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>1, "activity_id"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>1}}
+  [1m[35mActivity Load (27.0ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mVote Load (1.0ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 123 AND "votes"."activity_id" = 1
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."activity_id" = 1 AND "votes"."user_id" = 123[0m
+Completed 500 Internal Server Error in 44ms
+
+NoMethodError (undefined method `score=' for nil:NilClass):
+  app/models/vote.rb:16:in `voteOn'
+  app/controllers/activities_controller.rb:74:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.0ms)
+
+
+Started GET "/activities/get_activity?activity_id=1" for 127.0.0.1 at 2014-05-31 18:12:45 -0700
+Processing by ActivitiesController#get_activity as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/js/underscore-min.map" for 127.0.0.1 at 2014-05-31 18:12:45 -0700
+
+ActionController::RoutingError (No route matches [GET] "/js/underscore-min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/dev/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (156.5ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:12:51 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>-1, "activity_id"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>-1}}
+  [1m[35mActivity Load (1.0ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mVote Load (1.0ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 123 AND "votes"."activity_id" = 1
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."activity_id" = 1 AND "votes"."user_id" = 123[0m
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `score=' for nil:NilClass):
+  app/models/vote.rb:16:in `voteOn'
+  app/controllers/activities_controller.rb:74:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (64.0ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:12:56 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>1, "activity_id"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>1}}
+  [1m[35mActivity Load (1.0ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mVote Load (1.0ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 123 AND "votes"."activity_id" = 1
+  [1m[36mVote Load (1.0ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."activity_id" = 1 AND "votes"."user_id" = 123[0m
+Completed 500 Internal Server Error in 11ms
+
+NoMethodError (undefined method `score=' for nil:NilClass):
+  app/models/vote.rb:16:in `voteOn'
+  app/controllers/activities_controller.rb:74:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.5ms)
+
+
+Started GET "/activities/get_activities?user_id=123" for 127.0.0.1 at 2014-05-31 18:13:01 -0700
+Processing by ActivitiesController#get_activities as HTML
+  Parameters: {"user_id"=>"123"}
+  [1m[35mActivity Load (1.0ms)[0m  SELECT "activities".* FROM "activities"
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 ORDER BY "categories"."id" ASC LIMIT 1
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:13:14 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>1, "activity_id"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>1}}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 123 AND "votes"."activity_id" = 1[0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."activity_id" = 1 AND "votes"."user_id" = 123
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `score=' for nil:NilClass):
+  app/models/vote.rb:16:in `voteOn'
+  app/controllers/activities_controller.rb:74:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.0ms)
+
+
+Started POST "/activities/vote_on" for 127.0.0.1 at 2014-05-31 18:13:15 -0700
+Processing by ActivitiesController#vote_on as HTML
+  Parameters: {"rating"=>-1, "activity_id"=>1, "user_id"=>123, "activity"=>{"user_id"=>123, "rating"=>-1}}
+  [1m[36mActivity Load (1.0ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 123 AND "votes"."activity_id" = 1[0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."activity_id" = 1 AND "votes"."user_id" = 123
+Completed 500 Internal Server Error in 29ms
+
+NoMethodError (undefined method `score=' for nil:NilClass):
+  app/models/vote.rb:16:in `voteOn'
+  app/controllers/activities_controller.rb:74:in `vote_on'
+
+
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/dev/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.5ms)
