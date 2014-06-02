@@ -15,7 +15,7 @@
                                 <button class="btn btn-default btn-lg" ng-click="vote.vote_up(activity.id)"><i style="color:green" class="glyphicon glyphicon-arrow-up"></i></button>
                             </div>
                             <div class="col-xs-12">
-                                <span class="label">{{activity.num_votes}}</span>
+                                <span class="label">{{activity.avg_vote}}</span>
                             </div>
                             <div class="col-xs-12">
                                 <button class="btn btn-default btn-lg" ng-click="vote.vote_down(activity.id)"><i style="color:red" class="glyphicon glyphicon-arrow-down"></i></button>
@@ -29,7 +29,6 @@
         <div class="panel-footer">
             <div class="row">
                 <div class="col-xs-12">
-
                         <p>{{activity.description}}
                         </p>
                         <a href="/#!/activities/{{activity.id}}" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>

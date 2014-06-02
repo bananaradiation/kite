@@ -27,18 +27,42 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                             rating:1,
                             activity_id:activity_id,
                             user_id:userID
+					}).$promise.then(function(response) {
+						if ($scope.activity != null) $scope.activity = response.activity;
+						else if ($scope.activity_data != null) {
+							for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
+								var activity = $scope.activity_data.activities[ndx];
+								if (activity.id==activity_id) {
+									$scope.activity_data.activities[ndx] = response.activity;
+									break;
+								}
+							}
+						}
+					}, function(error) {
+						alert(error.data);
 					});
                 }
             },
             vote_down:function(activity_id) {
                 if ($scope.vote.check_votability()) {
-                    ActivitiesSvc.resources.vote_on(
-                        {
+                    ActivitiesSvc.resources.vote_on({
                             rating:-1,
                             activity_id:activity_id,
                             user_id:userID
-                        }
-                    );
+					}).$promise.then(function(response) {
+						if ($scope.activity != null) $scope.activity = response.activity;
+						else if ($scope.activity_data != null) {
+							for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
+								var activity = $scope.activity_data.activities[ndx];
+								if (activity.id==activity_id) {
+									$scope.activity_data.activities[ndx] = response.activity;
+									break;
+								}
+							}
+						}
+					}, function(error) {
+						alert(error.data);
+					});
                 }
             }
         };
@@ -56,8 +80,9 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
             // set_selected: function()
         };
 
-        // go to single activity detail page
-        $scope.activity={};
+        $scope.activity = null;
+		$scope.activity_data = null;
+		// go to single activity detail page
         if ($routeParams.id != null) {
             ActivitiesSvc.resources.get_activity({activity_id:$routeParams.id}).
             $promise.then(function(response) {
@@ -65,15 +90,10 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
             }, function(error) {
                 console.log(error);
             });
-            // console.log($scope.activity);
         }
         // show activities list
         else {
-            $scope.activity_data = ActivitiesSvc.resources.get_activities(
-                {
-                    user_id:userID
-                }
-            );
+            $scope.activity_data = ActivitiesSvc.resources.get_activities({user_id:userID});
         }
 		
         $scope.create_activity = {

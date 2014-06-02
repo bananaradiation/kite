@@ -72,9 +72,9 @@ class ActivitiesController < ApplicationController
     def vote_on
         @activity = Activity.find(params[:activity_id])
         if Vote.voteOn(params[:activity_id], params[:user_id], params[:rating])
-            return true
+            render :json=>Activity.find_by_id(params[:activity_id])
         end
-        return false
+        return :text=>'There was an error voting for this activity', :status=>:service_unavailable
     end
 
 

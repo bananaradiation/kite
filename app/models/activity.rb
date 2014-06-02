@@ -53,7 +53,7 @@ class Activity < ActiveRecord::Base
     end
 
     def update
-        self.avg_vote = self.votes.average(:score)
+        self.avg_vote = self.votes.average(:score).to_f
         self.rating = self.getRating
         self.save
     end
