@@ -14,9 +14,8 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
-            <li ng-show="user!=null"><a href="/#/users/0">{{user.name}}</a></li>
-            <li ng-show="user==null"><a href="/#/auth/login">Login</a></li>
+            <li ng-show="get_user()!=null"><a href="/#!/users/0">{{get_user().name}}</a></li>
+            <li ng-show="get_user()==null"><a href="/#!/auth/login">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

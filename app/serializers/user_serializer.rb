@@ -5,13 +5,14 @@ class UserSerializer < ActiveModel::Serializer
         return [{:href => 'img/Infinity-Loop.png'},{:href => 'img/Compas.png'} ]
     end
 
-    # def toDo
-    #     return []
-    # end
+    def toDo
+         return []
+    end
 
     def completed
-        ActiveModel::ActivitySerializer.root = false
-        return [ActivitySerializer.new(Activity.first), ActivitySerializer.new(Activity.last)]
+		return []
+        #ActiveModel::ActivitySerializer.root = false
+        #return [ActivitySerializer.new(Activity.first), ActivitySerializer.new(Activity.last)]
     end
 
 end

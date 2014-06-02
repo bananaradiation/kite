@@ -5,15 +5,17 @@ var KiteControllers = angular.module('KiteControllers', []);
 //AppRoot controller
 KiteControllers.controller('AppRootCtrl', ['$scope', 'AuthSvc',
 	function($scope,AuthSvc) {
-		$scope.user = AuthSvc.get_user()
-		console.log($scope.user)
+		$scope.user = AuthSvc.get_user();
+		$scope.get_user = function() {
+			return AuthSvc.get_user();
+		}
     }
 ])
 
 KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc', 'GoogleSvc',
     function($scope, $routeParams, ActivitiesSvc, GoogleSvc) {
-        // console.log($routeParams);
-        var userID=123;
+		var userID = null;
+		if ($scope.get_user()!=null) userID = $scope.get_user().id;
 
         $scope.vote = {
             check_votability:function() {
@@ -91,15 +93,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                 console.log($scope.create_activity)
             }
         }
-
-
-// POST /activities/add_activity
-// Params:
-// user_id, activity_name, description, location, category
-// Returns:
-// success
-
-		//console.log(activities);
 	}
 ])
 
@@ -109,8 +102,8 @@ KiteControllers.controller('UsersCtrl',['$scope', '$routeParams', 'UsersSvc',
     }
 ])
 
-KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', 'AuthSvc',
-    function($scope, $routeParams, AuthSvc) {
+KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', '$location', 'AuthSvc',
+    function($scope, $routeParams, $location, AuthSvc) {
         $scope.login = {
             credentials:{
                 email:null,
@@ -119,9 +112,10 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', 'AuthSvc',
             login:function() {
                 AuthSvc.resources.login($scope.login.credentials).$promise
                     .then(function(response) {
-                        AuthSvc.store_user(response.user)
+                        AuthSvc.store_user(response.user);
+						$location.path('/');
                     }, function(error) {
-                        controller.log(error)
+						alert(error.data);
                     })
             },
         }
