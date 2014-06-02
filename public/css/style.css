@@ -5,13 +5,15 @@ body {
 .angular-google-map-container { height: 200px; }
 
 .panel-default {
-    padding:5px 15px;
-    border-color: rgba(203, 215, 223, 1);
+    /*padding:5px 15px;
+    border-color: rgba(203, 215, 223, 1);*/
+    height:400px;
 }
 
+
 .panel-default .panel-heading {
-    padding:10px 10px;
-    background: none;
+    /*padding:10px 10px;
+    background: none;*/
 }
 
 .panel-default .panel-heading h3{
@@ -25,7 +27,7 @@ body {
     padding: 10px 0;
     text-align: left;
     margin: 0;
-    font: 700 48px/1 'Playfair Display SC', serif;
+    /*font: 700 48px/1 'Playfair Display SC', serif;*/
     max-width: 696px;
 }
 
@@ -37,7 +39,7 @@ body {
 }
 
 .panel-default .panel-body .panel-item{
-    height:200px;
+    height:190px;
     margin-right: 0;
 }
 
