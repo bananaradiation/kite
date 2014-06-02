@@ -83,9 +83,17 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 		$scope.activity_data = null;
 		// go to single activity detail page
         if ($routeParams.id != null) {
+			$scope.activity = {map: {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14}};
             ActivitiesSvc.resources.get_activity({activity_id:$routeParams.id}).
             $promise.then(function(response) {
                 $scope.activity = response.activity;
+				$scope.activity.map = {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14};
+				GoogleSvc.resources.geocode({key:GOOGLE_API_KEY, address:$scope.activity.location}).
+				$promise.then(function(gresponse) {
+					$scope.activity.map.center.latitude = gresponse.results[0].geometry.location.lat;
+					$scope.activity.map.center.longitude = gresponse.results[0].geometry.location.lng;
+				}, function(error) {
+				});
             }, function(error) {
                 console.log(error);
             });

@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
-    attributes :id, :name, :loc_x, :loc_y, :description, :category, :photos, :num_votes, :avg_vote
+    attributes :id, :name, :location, :description, :category, :photos, :num_votes, :avg_vote
 
     def category
         CategorySerializer.new(object.category)
