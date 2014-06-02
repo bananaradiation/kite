@@ -25,6 +25,15 @@
                                 </div>
                                 <input type="hidden" name="img" value=""/>
                             </div>
+							
+							<div class="col-xs-12">
+                                <label>Category</label>
+								</br>
+								<select	ng-model="create_activity.data.category" 
+										ng-options="category.id as category.name for category in create_activity.categories.categories">
+								</select>
+							</div>
+							
                             <div class="col-xs-12">
                                 <label>Location</label>
                                 <input class="form-control" type="text" ng-model="create_activity.data.location" ng-blur="create_activity.refresh_map()"/>

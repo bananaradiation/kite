@@ -29,18 +29,20 @@ class ActivitiesController < ApplicationController
     # Params: user_id, activity_name, description, location, category
     # Returns: success
     def add_activity
-        @activity = Activity.new(
-            :user => params[:user_id], 
+        @activity = Activity.new({
+            :user => User.find_by_id(params[:user_id]), 
             :name => params[:activity][:name], 
             :description => params[:activity][:description],
-            :category => params[:activity][:category],
-            :loc_x => params[:activity][:loc_x], 
-            :loc_y => params[:activity][:loc_y])
+            :category => Category.find_by_id(params[:activity][:category]),
+			:location => params[:activity][:location]
+            #:loc_x => params[:activity][:loc_x], 
+            #:loc_y => params[:activity][:loc_y])
+		})
 
             if @activity.save
-                return true
+				render :json=>@activity
             else
-                return false
+                render :text=>'There was an error saving the activity.', :status=>:service_unavailable
             end
     end
 

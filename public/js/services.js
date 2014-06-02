@@ -3,10 +3,23 @@
 var KiteServices = angular.module('KiteServices', ['ngResource', 'ngCookies']);
 
 //Handle activity APIs
-KiteServices.factory('ActivitiesSvc', ['$resource',
-	function($resource) {
+KiteServices.factory('ActivitiesSvc', ['$resource', 'DataSvc',
+	function($resource, DataSvc) {
 		return {
+			get_categories: function() {
+				var key = 'categories';
+				var data = DataSvc.read_data(key);
+				if (data==null) {
+					var categories = this.resources.get_categories();
+					categories.$promise.then(function(response) {
+						DataSvc.write_data(key, response);
+					}, function(error) {
+					});
+					return categories;
+				} else return data;
+			},
 			resources: $resource(null, {}, {
+				get_categories: {method: 'GET', url:'categories/get_categories', isArray:false},
 				get_activities: {method:'GET', url:'activities/get_activities', isArray:false},
                 get_activity: {method:'GET', url:'activities/get_activity', isArray:false},
                 vote_on: {method:'POST', url:'activities/vote_on', isArray:false},

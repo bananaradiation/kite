@@ -77,7 +77,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                     return (r.category.category.id==$scope.category.selected)
                 }
             },
-            // set_selected: function()
         };
 
         $scope.activity = null;
@@ -97,12 +96,12 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
         }
 		
         $scope.create_activity = {
-            data: {name: null, description: null, photos: [], location: null, category: null},
+			categories: ActivitiesSvc.get_categories(),
+            data: {name: null, description: null, photos: [], location: null, category: 1},
 			map: {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14},
 			refresh_map: function() {
 				GoogleSvc.resources.geocode({key:GOOGLE_API_KEY, address:$scope.create_activity.data.location}).
 				$promise.then(function(response) {
-					console.log(response);
 					$scope.create_activity.map.center.latitude = response.results[0].geometry.location.lat;
 					$scope.create_activity.map.center.longitude = response.results[0].geometry.location.lng;
 				}, function(error) {
@@ -110,6 +109,13 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 				
 			},
             add_activity:function() {
+				ActivitiesSvc.resources.add_activity({
+					user_id: userID,
+					activity: $scope.create_activity.data,
+				}).$promise.then(function(response) {
+					console.log(response);
+				}, function(error) {
+				});
                 console.log($scope.create_activity)
             }
         }
