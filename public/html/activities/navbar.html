@@ -1,8 +1,9 @@
 <!-- Nav tabs -->
 <ul class="nav nav-pills">
-  <li ng-class="{active: category.selected==0}"><a ng-click="category.selected=0" data-toggle="tab">All</a></li>
-  <li ng-class="{active: category.selected==2}"><a ng-click="category.selected=2" data-toggle="tab">Art</a></li>
-  <li ng-class="{active: category.selected==1}"><a ng-click="category.selected=1" data-toggle="tab">Outdoors</a></li>
-  <li ng-class="{active: category.selected==3}"><a ng-click="category.selected=3" data-toggle="tab">Activity</a></li>
+	<li ng-class="{active: category.selected==0}"><a ng-click="category.selected=0" data-toggle="tab">All</a></li>
+	<li	ng-repeat="cat in categories.categories"
+		ng-class="{active: category.selected==cat.id}">
+			<a ng-click="category.selected=cat.id" data-toggle="tab">{{cat.name}}</a>
+	</li>
 </ul>
 <br>

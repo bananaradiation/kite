@@ -78,6 +78,8 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
                 }
             },
         };
+		
+		$scope.categories = ActivitiesSvc.get_categories();
 
         $scope.activity = null;
 		$scope.activity_data = null;
