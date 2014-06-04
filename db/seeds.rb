@@ -75,6 +75,13 @@ User.create({
 	:password => 'asdf'
 })
 
+Category.create({:description => 'Activity'})
+Category.create({:description => 'Art'})
+Category.create({:description => 'Food'})
+Category.create({:description => 'Music'})
+Category.create({:description => 'Sights'})
+
+
 
 
 

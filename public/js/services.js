@@ -48,7 +48,8 @@ KiteServices.factory('AuthSvc', ['$resource', 'DataSvc',
                 return DataSvc.read_data(key)
             },
             logout: function() {
-                DataSvc.clear_data(key)
+                DataSvc.clear_data(key);
+				DataSvc.clear_cookie();
             },
             resources: $resource(null, {}, {
                 login: {method:'POST', url:'users/login', isArray:false}
