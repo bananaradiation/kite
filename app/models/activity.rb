@@ -62,5 +62,13 @@ class Activity < ActiveRecord::Base
         self.num_votes = self.getVoteCount
         self.save
     end
+	
+	def add_photo(uid, url)
+		return Photo.create({
+			:activity_id => self.id,
+			:url => url,
+			:user_id => uid
+		})
+	end
 
 end

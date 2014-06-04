@@ -40,6 +40,8 @@ class ActivitiesController < ApplicationController
 		})
 
             if @activity.save
+				puts params[:activity].inspect
+				@activity.add_photo(params[:user_id], params[:activity][:photo_url])
 				render :json=>@activity
             else
                 render :text=>'There was an error saving the activity.', :status=>:service_unavailable

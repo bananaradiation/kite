@@ -90,8 +90,10 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 				$scope.activity.map = {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14};
 				GoogleSvc.resources.geocode({key:GOOGLE_API_KEY, address:$scope.activity.location}).
 				$promise.then(function(gresponse) {
-					$scope.activity.map.center.latitude = gresponse.results[0].geometry.location.lat;
-					$scope.activity.map.center.longitude = gresponse.results[0].geometry.location.lng;
+					if (gresponse.results.length>0) {
+						$scope.activity.map.center.latitude = gresponse.results[0].geometry.location.lat;
+						$scope.activity.map.center.longitude = gresponse.results[0].geometry.location.lng;
+					}
 				}, function(error) {
 				});
             }, function(error) {
@@ -125,7 +127,18 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 				}, function(error) {
 				});
                 console.log($scope.create_activity)
-            }
+            },
+			init_filepicker: (function() {
+				var apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
+				filepicker.setKey(apiKey);
+				console.log(filepicker);
+				console.log('initialized');
+			})(),
+			upload_photo: function(event) {
+				$scope.create_activity.data.photo_url = filepicker_callback[0].url;
+				console.log(123);
+				console.log(filepicker_callback);
+			}
         }
 	}
 ])

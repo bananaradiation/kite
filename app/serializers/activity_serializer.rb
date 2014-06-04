@@ -6,7 +6,19 @@ class ActivitySerializer < ActiveModel::Serializer
     end
 
     def photos
-        return ['http://lorempixel.com/300/200/nature/']
+		photos = Photo.where({:activity_id => object.id})
+		
+		data = []
+		photos.each do |photo|
+			data.push({
+				:id => photo.id,
+				:url => photo.url,
+				:activity_id => photo.activity_id,
+				:user_id => photo.user_id
+			})
+		end
+		
+		return data
     end
 
     # def num_votes
