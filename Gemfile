@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'composite_primary_keys'
+gem 'thin'
 
 gem 'active_model_serializers'
 
