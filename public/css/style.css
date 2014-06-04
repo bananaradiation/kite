@@ -5,7 +5,7 @@ body {
 .angular-google-map-container { height: 200px; }
 
 .panel-default {
-    padding:5px 15px;
+    /*padding:5px 15px;*/
     border-color: rgba(203, 215, 223, 1);
 }
 
