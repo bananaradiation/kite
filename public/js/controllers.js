@@ -12,8 +12,8 @@ KiteControllers.controller('AppRootCtrl', ['$scope', 'AuthSvc',
     }
 ])
 
-KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'ActivitiesSvc', 'GoogleSvc',
-    function($scope, $routeParams, ActivitiesSvc, GoogleSvc) {
+KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$location', 'ActivitiesSvc', 'GoogleSvc',
+    function($scope, $routeParams, $location, ActivitiesSvc, GoogleSvc) {
 		var userID = null;
 		if ($scope.get_user()!=null) userID = $scope.get_user().id;
 
@@ -125,7 +125,7 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 					user_id: userID,
 					activity: $scope.create_activity.data,
 				}).$promise.then(function(response) {
-					console.log(response);
+					$location.path('/');
 				}, function(error) {
 				});
                 console.log($scope.create_activity)
@@ -133,8 +133,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', 'Activit
 			init_filepicker: (function() {
 				var apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
 				filepicker.setKey(apiKey);
-				console.log(filepicker);
-				console.log('initialized');
 			})(),
 			upload_photo: function(event) {
 				$scope.create_activity.data.photo_url = filepicker_callback[0].url;

@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+=begin
 b1 = Badge.create :name => 'Artistic Integrity', :requirements => 'See all of the art structures on campus'
 b2 = Badge.create :name => 'Outdoorsperson', :requirements => 'Visit all of the outdoor sights on and around campus'
 b3 = Badge.create :name => 'Gotta Geocache Them All', :requirements => 'Find all the geocaches on campus'
@@ -66,7 +67,13 @@ v12 = Vote.create :score => 1, :user => u4, :activity => a2
 v13 = Vote.create :score => -1, :user => u5, :activity => a2
 v14 = Vote.create :score => -1, :user => u6, :activity => a2
 v15 = Vote.create :score => -1, :user => u7, :activity => a2
+=end
 
+User.create({
+	:name => 'Harry',
+	:email => 'harry@potter.com',
+	:password => 'asdf'
+})
 
 
 
