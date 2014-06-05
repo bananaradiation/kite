@@ -10,9 +10,14 @@
                 <div class="panel-body activity-body" style="background-image: url('{{activity.photos[0].url}}');">
                     <div class="row panel-item">
                         <div>
-                            <div class="col-xs-6 no-border panel-item">
+                            <div class="col-xs-6 col-md-8 no-border panel-item">
+                                <button class="btn btn-warning didit">
+                                    <i class="glyphicon glyphicon-star" style="color:yellow">
+                                    </i>
+                                    <p>I did it</p>
+                                </button>
                             </div>
-                            <div class="col-xs-6 upvote-panel panel-item">
+                            <div class="col-xs-6 col-md-4 upvote-panel panel-item">
                                 <div class="row text-center upvote-inner">
                                     <div class="col-md-6 pull-right">
                                         <div class="col-xs-12">
@@ -39,7 +44,15 @@
                             <div class="col-xs-12">
                                     <p>{{activity.description}}</p>
                             </div>
-							
+                            <div class="col-xs-12">
+                                    <img class="thumbnail" src="{{activity.photos[0].url}}"/>
+                                    <img class="thumbnail" src="{{activity.photos[1].url}}"/>
+                                    <img class="thumbnail" src="{{activity.photos[2].url}}"/>
+                                    <img class="thumbnail" src="{{activity.photos[3].url}}"/>
+                            </div>
+                            <div class="col-xs-12">
+                                <button class="btn btn-primary">Upload Image</button>
+                            </div>
                             <div class="col-xs-12">
                                 <hr>
                                 <div class="well" id="map-canvas">
