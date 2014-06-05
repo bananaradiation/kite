@@ -37,7 +37,11 @@ body {
     width: 300px !important;
 }
 
-.angular-google-map-container { height: 200px; }
+.angular-google-map-container { 
+    height: 200px; 
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
 
 .fg-panel .panel-default {
     height: 400px;
@@ -124,4 +128,8 @@ body {
 
 #map-canvas{
     padding: 0px;
+}
+
+.footer p{
+    color: white !important;
 }
