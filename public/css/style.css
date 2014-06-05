@@ -111,7 +111,7 @@ h4, h5, h6, p, {
     background-image:none !important;
     background-color:transparent !important;
     color: white !important;
-    text-shadow: 0 0px 0px black !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3) !important;
     -webkit-transition: background-color .2s ease-in-out 0s !important;
 }
 
@@ -133,6 +133,10 @@ h4, h5, h6, p, {
 
 .btn-primary:hover{
     background-color: #0e82e7 !important;
+}
+
+.btn-warning:hover{
+    background-color: #feff64 !important; 
 }
 
 .btn-default:hover{
