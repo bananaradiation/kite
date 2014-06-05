@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0 */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css */
 
 body {
@@ -21,42 +23,55 @@ body {
     position: relative;
     top: 0px;
     left: 0px;
+    margin-right: -300px;
     -webkit-filter:blur(2px);
+    width: 300px !important;
+    margin-bottom: 20px;
 }
 
 .fg-panel {
     margin-bottom: -400px;
+    position: relative;
+    top: 0px;
     left: 0px;
+    width: 300px !important;
 }
 
 .angular-google-map-container { height: 200px; }
 
+.fg-panel .panel-default {
+    height: 400px;
+}
+
 .panel-default {
-        position: relative;
-        top: -400px;
     background-color: transparent !important;
     background-image: none;
-    height: 400px;
-        border-color: #000000 !important;
-}
-
-.panel-body{
     border-color: #000000 !important;
 }
 
-.panel-footer{
+.fg-panel .panel-body{
+    border-color: #000000 !important;
+}
+.fg-panel .panel-footer{
+    height: 123px;
+}
+
+.panel-footer, .panel-heading {
     background-color: rgba(0, 0, 0, 0.5) !important;
     color: white !important;
-    height: 123px;
     border-color: #000000 !important;
 }
 
-.panel-default>.panel-heading {
+.panel-login{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: white !important;
+    border-color: #000000 !important;
+}
+
+.panel-heading {
     padding:10px 10px;
     height: 75px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
     background-image: none !important;
-    color: white !important;
 }
 .panel-default .activity-body{
     padding:0;
@@ -108,5 +123,5 @@ body {
 }
 
 #map-canvas{
-    height:200px;
+    padding: 0px;
 }
