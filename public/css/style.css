@@ -16,13 +16,17 @@ body {
 }
 
 .bg-panel {
-    background-image: url(https://www.filepicker.io/api/file/WTkHxUIPQSiX6q361EZl);
     height: 400px;
     background-clip:content-box;
     position: relative;
     top: 0px;
+    left: 0px;
     -webkit-filter:blur(2px);
-    
+}
+
+.fg-panel {
+    margin-bottom: -400px;
+    left: 0px;
 }
 
 .angular-google-map-container { height: 200px; }
