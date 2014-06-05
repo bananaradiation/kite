@@ -14,10 +14,10 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li ng-show="get_user()!=null"><a href="/#!/users/0">{{get_user().name}}</a></li>
-			<li ng-show="get_user()!=null"><a href="/#!/activities/add">Create Activity</a></li>
-			<li ng-show="get_user()!=null"><a style="cursor:pointer;" ng-click="logout()">Logout</a></li>
-            <li ng-show="get_user()==null"><a href="/#!/auth/login">Login</a></li>
+            <li ng-show="get_user()!=null"><a href="/#!/users/0" onclick="$('.navbar-collapse').collapse('hide');">{{get_user().name}}</a></li>
+			<li ng-show="get_user()!=null"><a href="/#!/activities/add" onclick="$('.navbar-collapse').collapse('hide');">Create Activity</a></li>
+			<li ng-show="get_user()!=null"><a style="cursor:pointer;" ng-click="logout()" onclick="$('.navbar-collapse').collapse('hide');">Logout</a></li>
+            <li ng-show="get_user()==null"><a href="/#!/auth/login" onclick="$('.navbar-collapse').collapse('hide');">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
