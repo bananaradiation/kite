@@ -7,10 +7,10 @@
 body {
     padding: 70px 0px;
     background: -moz-linear-gradient(90deg, rgb(130, 30, 216) 0%, rgb(75, 13, 134) 63.6%) fixed;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgb(130, 30, 216)), color-stop(0.636, rgb(75, 13, 134))) fixed;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(130, 30, 216)), color-stop(0.636, rgb(75, 13, 134))) fixed;font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, label, a {
+h1, h2, h3, h4, h5, h6, p, label {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing: 2px;
@@ -263,6 +263,28 @@ h4, h5, h6, p {
 }
 
 @media (max-width: 450px) {
+
+
+
+h1, h2, h3, h4, h5, h6, p, label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-spacing: 0;
+    text-indent: 3px !important;
+    white-space: normal !important;
+}
+
+h1, h2, h3{
+    font-weight: 400 !important;
+}
+
+h4, h5, h6, p {
+    font-weight: 300 !important;
+}
+
+
+
 
 .fg-panel, .bg-panel {
     height: 466px;
