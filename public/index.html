@@ -32,6 +32,17 @@
 	    <link rel="apple-touch-icon" href="img/kite-icon-76@2x.png"/>
 	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone.png" />
 	    <link rel="apple-touch-startup-image" href="img/kite-splash-iPhone5.png" sizes="640x1096">
+		<!-- iPhone (Retina) -->
+		<link href="img/kite-splash-iPhone.png"
+		      media="(device-width: 320px) and (device-height: 480px)
+		         and (-webkit-device-pixel-ratio: 2)"
+		      rel="apple-touch-startup-image">
+		<!-- iPhone 5 -->
+		<link href="img/kite-splash-iPhone5.png"
+		      media="(device-width: 320px) and (device-height: 568px)
+		         and (-webkit-device-pixel-ratio: 2)"
+		      rel="apple-touch-startup-image">
+
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 	    <link rel="shortcut icon" href="">
@@ -63,7 +74,7 @@
 	<body ng-controller="AppRootCtrl">
 		<ng-include src="'html/header.html'"></ng-include>
 
-		<div class="container" ng-view=""></div>
+		<div class="" ng-view=""></div>
 		<script>
 			//apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
 			//filepicker.setKey(apiKey);

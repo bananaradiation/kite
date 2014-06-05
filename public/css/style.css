@@ -50,8 +50,6 @@ h4, h5, h6, p {
     background-clip:content-box;
     background-size: 100% 100%;
     position: relative;
-    top: 0;
-    left: 0px;
     -webkit-filter:blur(3px);
     -moz-filter:blur(2px);
     clear: both;
@@ -62,14 +60,14 @@ h4, h5, h6, p {
 .fg-panel {
     margin-bottom: -468px;
     position: relative;
-    top: 0px;
-    left: 0px;
 }
 
 .fg-panel, .bg-panel {
     height: 540px;
     width: 375px !important;
     margin-right: -375px;
+    top: 0;
+    left: 25%;
 }
 
 .fg-panel .panel-body, .panel-item, .panel-default .activity-body{
@@ -266,6 +264,8 @@ h4, h5, h6, p {
     width: 375px !important;
     margin-right: -375px;
     margin-bottom: 20px;
+    top: 0;
+    left: 0;
 }
 
 .fg-panel .panel-body, .panel-item, .panel-default .activity-body{
@@ -305,6 +305,8 @@ h4, h5, h6, p {
     width: 300px !important;
     margin-right: -300px;
     margin-bottom: 20px;
+    top: 0;
+    left: 0;
 }
 
 .fg-panel .panel-body, .panel-item, .panel-default .activity-body{
