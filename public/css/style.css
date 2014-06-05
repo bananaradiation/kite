@@ -8,6 +8,14 @@ body {
     background: -webkit-gradient(linear, left bottom, left top, from(rgb(130, 30, 216)), color-stop(0.636, rgb(75, 13, 134))) scroll;
 }
 
+.navbar{
+    background: none rgba(0,0,0, 0.5) !important;
+}
+
+.navbar a, .name, .topline{
+    color: white !important;
+}
+
 .nav-pills li.active a{
     background-color: #882bdf !important;
     color: white !important;
@@ -18,16 +26,18 @@ body {
 }
 
 .bg-panel {
-    height: 468px;
     background-clip:content-box;
     background-size: auto 100%;
     position: relative;
-    top: 0px;
+    top: 0;
     left: 0px;
-    margin-right: -275px;
-    -webkit-filter:blur(2px);
-    width: 275px !important;
+    margin-right: -375px;
+    -webkit-filter:blur(3px);
+    -moz-filter:blur(2px);
+    width: 375px !important;
     margin-bottom: 20px;
+    clear: both;
+    padding: 0;
 }
 
 .fg-panel {
@@ -35,7 +45,21 @@ body {
     position: relative;
     top: 0px;
     left: 0px;
-    width: 275px !important;
+    width: 375px !important;
+}
+
+.fg-panel .panel-default, .bg-panel {
+    height: 534px;
+}
+
+.fg-panel .panel-body{
+    border-color: #000000 !important;
+    height: 375px !important;
+}
+
+.fg-panel .panel-footer{
+    height: 125px;
+    font: 19px "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
 .angular-google-map-container { 
@@ -44,28 +68,25 @@ body {
     -webkit-border-radius: 5px;
 }
 
-.fg-panel .panel-default {
-    height: 468px !important;
-}
-
 .panel-default {
     background-color: transparent !important;
     background-image: none;
     border-color: #000000 !important;
 }
 
-.fg-panel .panel-body{
-    border-color: #000000 !important;
-    height: 275px !important;
-}
-.fg-panel .panel-footer{
-    height: 125px;
-}
-
 .panel-footer, .panel-heading {
     background-color: rgba(0, 0, 0, 0.5) !important;
     color: white !important;
     border-color: #000000 !important;
+}
+
+.panel-footer a{
+    float: right;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color:transparent;
+    background-image:none;
 }
 
 .panel-login{
@@ -75,22 +96,30 @@ body {
 }
 
 .panel-heading {
-    padding:10px 10px;
-    height: 100px;
+    height: 70px;
     background-image: none !important;
+    overflow: hidden;
 }
+.panel-heading h3 {
+    background-image: none !important;
+    margin: 10px 0;
+}
+
 .panel-default .activity-body{
     padding:0;
     margin:0;
-    height: 243px !important;
     background-color:black;
     background-size: 100% auto;
 }
 
 .panel-default .panel-body .panel-item{
-    height:243px;
     margin-right: 0;
 }
+
+.panel-item, .panel-default .activity-body{
+        height: 343px !important;
+}
+
 .noborder-color {
     border-color: transparent;
 }
@@ -100,33 +129,30 @@ body {
     margin: 0;
 }
 
-.center-y{
-    vertical-align:middle;
-    }
-.center-x{
-    text-align:center;
-    }
-
-.center-outer{
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
 .upvote-panel{
-    background-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0)), color-stop(0.636, rgba(0, 0, 0, .5)));
-    background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 63.6%);
+    background-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0)), color-stop(0.345, rgba(0, 0, 0, 0.7)));
+    background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 34.5%);
 }
 
 .upvote-inner {
     top: 40px;
     position: absolute;
+}
+
+.upvote-inner .label{
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.upvote-inner button {
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    text-shadow: 0 0 0 black;
+    background-color:transparent;
+    background-image:none;
+    padding: 40px 20px;
 }
 
 #map-canvas{
