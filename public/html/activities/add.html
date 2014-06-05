@@ -48,7 +48,12 @@
 							
                             <div class="col-xs-12">
                                 <label>Location</label>
-                                <input class="form-control" type="text" ng-model="create_activity.data.location" ng-blur="create_activity.refresh_map()"/>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" ng-model="create_activity.data.location" ng-blur="create_activity.refresh_map()"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                    </span>
+                                </div>
                                 <br>
                                 <google-map center="create_activity.map.center" zoom="create_activity.map.zoom">
 									<marker coords="create_activity.map.center"></marker>
