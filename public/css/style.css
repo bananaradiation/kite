@@ -80,13 +80,41 @@ body {
     border-color: #000000 !important;
 }
 
-.panel-footer a{
+.fg-panel .panel-footer a{
     float: right;
     position: absolute;
     top: 60px;
     right: 20px;
     background-color:transparent;
     background-image:none;
+}
+
+.btn {
+    background-image:none !important;
+    background-color:transparent !important;
+    color: white !important;
+    text-shadow: 0 0px 0px black !important;
+    -webkit-transition: background-color .2s ease-in-out 0s !important;
+}
+
+.btn:hover{
+    -webkit-transition: background-color .2s ease-in-out 0s !important;
+}
+
+.btn-success:hover{
+    background-color: #54b054 !important;
+}
+
+.btn-info:hover{
+    background-color: #4ebada !important;
+}
+
+.btn-danger:hover{
+    background-color: #cf423e !important;
+}
+
+.btn-default:hover{
+    background-color: #ffffff !important;
 }
 
 .panel-login{
