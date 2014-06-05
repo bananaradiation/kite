@@ -1,34 +1,59 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css */
+
 body {
     padding: 70px 0px;
+    background: -moz-linear-gradient(90deg, rgb(130, 30, 216) 0%, rgb(75, 13, 134) 63.6%) scroll;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(130, 30, 216)), color-stop(0.636, rgb(75, 13, 134))) scroll;
+}
+
+.nav-pills li.active a{
+    background-color: #882bdf !important;
+    color: white !important;
+}
+
+.nav-pills li a {
+    color: #882bdf !important;
+}
+
+.bg-panel {
+    background-image: url(https://www.filepicker.io/api/file/WTkHxUIPQSiX6q361EZl);
+    height: 400px;
+    background-clip:content-box;
+    position: relative;
+    top: 0px;
+    -webkit-filter:blur(2px);
+    
 }
 
 .angular-google-map-container { height: 200px; }
 
 .panel-default {
-    /*padding:5px 15px;*/
-    border-color: rgba(203, 215, 223, 1);
+        position: relative;
+        top: -400px;
+    background-color: transparent !important;
+    background-image: none;
+    height: 400px;
+        border-color: #000000 !important;
 }
 
-.panel-default .panel-heading {
+.panel-body{
+    border-color: #000000 !important;
+}
+
+.panel-footer{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+    height: 123px;
+    border-color: #000000 !important;
+}
+
+.panel-default>.panel-heading {
     padding:10px 10px;
-    background: none;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-image: none !important;
+    color: white !important;
 }
-
-.panel-default .panel-heading h3{
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.panel-default .panel-heading h5{
-    color: #34495e;
-    padding: 10px 0;
-    text-align: left;
-    margin: 0;
-    font: 700 48px/1 'Playfair Display SC', serif;
-    max-width: 696px;
-}
-
 .panel-default .activity-body{
     padding:0;
     margin:0;
@@ -40,27 +65,6 @@ body {
     height:200px;
     margin-right: 0;
 }
-
-.panel-footer {
-    background: none;
-}
-
-.panel-footer .row p {
-    padding: 10px 0 5px 0;
-    margin: 0;
-    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    max-width: 696px;
-}
-
-
-.panel-footer .row h6 {
-    display: block;
-    font: 400 13px/1.3076923076 Lato, sans-serif;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: right;
-}
-
 .noborder-color {
     border-color: transparent;
 }
@@ -90,8 +94,8 @@ body {
 }
 
 .upvote-panel{
-	background-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0)), color-stop(0.636, rgba(0, 0, 0, 0.84)));
-	background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84) 63.6%);
+    background-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0, 0, 0, 0)), color-stop(0.636, rgba(0, 0, 0, .5)));
+    background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 63.6%);
 }
 
 .upvote-inner {
