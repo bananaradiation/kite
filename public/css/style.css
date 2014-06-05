@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.3 */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0.1 */
 
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0 */
@@ -106,12 +108,17 @@ h4, h5, h6, p {
     background-image:none;
 }
 
+.img-row{
+    margin-bottom: 10px;
+}
+
 .btn {
     background-image:none !important;
     background-color:transparent !important;
     color: white !important;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3) !important;
     -webkit-transition: background-color .2s ease-in-out 0s !important;
+    border-width: 2px !important;
 }
 
 .btn:hover{
@@ -242,6 +249,14 @@ h4, h5, h6, p {
 }
 
 
+.panel-footer img.img-thumbnail{
+    height: 93px;
+    border-bottom-color: black !important;
+    padding: 0px;
+    margin: 0px;
+    width: 93px;
+}
+
 
 
 @media (max-width: 767px) {
@@ -260,6 +275,8 @@ h4, h5, h6, p {
 
 .fg-panel .panel-footer{
     height: 125px;
+}
+
 }
 
 @media (max-width: 450px) {
@@ -282,9 +299,6 @@ h1, h2, h3{
 h4, h5, h6, p {
     font-weight: 300 !important;
 }
-
-
-
 
 .fg-panel, .bg-panel {
     height: 466px;
@@ -322,6 +336,11 @@ h4, h5, h6, p {
 .fg-panel .panel-footer p{
     height: 60px;
     overflow:hidden;
+}
+
+.panel-footer img.img-thumbnail{
+    height:50px;
+    width:50px; 
 }
 
 
