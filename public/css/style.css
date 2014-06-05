@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0.1 */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0 */
 
 /* @override http://cse210-kite.herokuapp.com/css/style.css */
@@ -6,6 +8,23 @@ body {
     padding: 70px 0px;
     background: -moz-linear-gradient(90deg, rgb(130, 30, 216) 0%, rgb(75, 13, 134) 63.6%) scroll;
     background: -webkit-gradient(linear, left bottom, left top, from(rgb(130, 30, 216)), color-stop(0.636, rgb(75, 13, 134))) scroll;
+}
+
+h1, h2, h3, h4, h5, h6, p, label, a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    word-spacing: 0;
+    text-indent: 3px !important;
+    white-space: normal !important;
+}
+
+h1, h2, h3{
+    font-weight: 100 !important;
+}
+
+h4, h5, h6, p, {
+    font-weight: 100 !important;
 }
 
 .navbar{
@@ -37,7 +56,7 @@ body {
     width: 375px !important;
     margin-bottom: 20px;
     clear: both;
-    padding: 0;
+        padding: 3px 0px;
 }
 
 .fg-panel {
@@ -49,7 +68,7 @@ body {
 }
 
 .fg-panel .panel-default, .bg-panel {
-    height: 534px;
+    height: 540px;
 }
 
 .fg-panel .panel-body{
@@ -59,7 +78,6 @@ body {
 
 .fg-panel .panel-footer{
     height: 125px;
-    font: 19px "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
 .angular-google-map-container { 
@@ -111,6 +129,10 @@ body {
 
 .btn-danger:hover{
     background-color: #cf423e !important;
+}
+
+.btn-primary:hover{
+    background-color: #0e82e7 !important;
 }
 
 .btn-default:hover{
