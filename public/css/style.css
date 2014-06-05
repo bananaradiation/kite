@@ -18,23 +18,24 @@ body {
 }
 
 .bg-panel {
-    height: 400px;
+    height: 468px;
     background-clip:content-box;
+    background-size: auto 100%;
     position: relative;
     top: 0px;
     left: 0px;
-    margin-right: -300px;
+    margin-right: -275px;
     -webkit-filter:blur(2px);
-    width: 300px !important;
+    width: 275px !important;
     margin-bottom: 20px;
 }
 
 .fg-panel {
-    margin-bottom: -400px;
+    margin-bottom: -468px;
     position: relative;
     top: 0px;
     left: 0px;
-    width: 300px !important;
+    width: 275px !important;
 }
 
 .angular-google-map-container { 
@@ -44,7 +45,7 @@ body {
 }
 
 .fg-panel .panel-default {
-    height: 400px;
+    height: 468px !important;
 }
 
 .panel-default {
@@ -55,9 +56,10 @@ body {
 
 .fg-panel .panel-body{
     border-color: #000000 !important;
+    height: 275px !important;
 }
 .fg-panel .panel-footer{
-    height: 123px;
+    height: 125px;
 }
 
 .panel-footer, .panel-heading {
@@ -74,18 +76,19 @@ body {
 
 .panel-heading {
     padding:10px 10px;
-    height: 75px;
+    height: 100px;
     background-image: none !important;
 }
 .panel-default .activity-body{
     padding:0;
     margin:0;
+    height: 243px !important;
     background-color:black;
     background-size: 100% auto;
 }
 
 .panel-default .panel-body .panel-item{
-    height:200px;
+    height:243px;
     margin-right: 0;
 }
 .noborder-color {
