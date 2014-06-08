@@ -218,6 +218,9 @@ h4, h5, h6, p {
     background-image:none;
     padding: 40px 20px;
 }
+	.upvote-inner button.selected {
+		background-color: white !important;
+	}
 
 #map-canvas{
     padding: 0px;
@@ -326,18 +329,6 @@ h4, h5, h6, p {
     margin: 0px;    
 }
 
-.upvote-inner button {
-    font-size: 24px;
-    text-align: center;
-    line-height: 60px;
-    text-shadow: 0 0 0 black;
-    background-color:transparent;
-    background-image:none;
-    padding: 20px 15px;
-}
-
-
-
 .fg-panel .panel-footer p{
     height: 60px;
     overflow:hidden;
@@ -346,8 +337,4 @@ h4, h5, h6, p {
 .panel-footer img.img-thumbnail{
     height:50px;
     width:50px; 
-}
-
-
-
 }

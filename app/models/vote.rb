@@ -8,6 +8,23 @@ class Vote < ActiveRecord::Base
     end
 
     def self.voteOn(activity_id, user_id, rating)
+		activity = Activity.find_by_id(activity_id)
+		cond = {:activity_id=>activity_id, :user_id=>user_id, :score=>rating}
+		existing = Vote.where(cond).first
+		
+		if (!existing.nil?)
+			existing.score = 0
+			existing.save
+		else
+			vote = nil
+			vote = Vote.create(cond) if (!Vote.hasVoted?(user_id, activity_id))
+			
+			vote ||= Vote.where({:activity_id => activity_id, :user_id => user_id}).first
+			vote.score = rating
+			vote.save
+		end
+	
+=begin	
         activity = Activity.find_by_id(activity_id)
 		vote = nil
 		
@@ -20,22 +37,8 @@ class Vote < ActiveRecord::Base
 		vote ||= Vote.where({:activity_id => activity_id, :user_id => user_id}).first
 		vote.score = rating
 		vote.save
-		
+=end		
 		activity.updateCount
 		activity.update
-		
-		
-=begin
-		@activity = Activity.find(activity_id)
-    	if Vote.hasVoted?(user_id, activity_id) == false
-    		Vote.create(:activity_id => activity_id, :user_id => user_id, :score => rating)
-        else
-            @vote = Vote.where(:activity_id => activity_id, :user_id => user_id)[0] 
-            @vote.score = rating
-            @vote.save
-            @activity.updateCount
-    	end
-        @activity.update
-=end
     end
 end
