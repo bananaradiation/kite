@@ -98,6 +98,15 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 					}
 				}, function(error) {
 				});
+				$scope.activity.add_image = function() {
+					var apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
+					filepicker.setKey(apiKey);
+					ActivitiesSvc.resources.add_photo({activity_id:$scope.activity.id, user_id:userID, photo_url:filepicker_callback[0].url}).
+					$promise.then(function(aresponse) {
+						$scope.activity.photos = aresponse.activity.photos;
+					}, function(error) {
+					});
+				}
             }, function(error) {
                 console.log(error);
             });
@@ -155,8 +164,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 			})(),
 			upload_photo: function(event) {
 				$scope.create_activity.data.photo_url = filepicker_callback[0].url;
-				console.log(123);
-				console.log(filepicker_callback);
 			}
         }
 	}

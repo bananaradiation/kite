@@ -128,6 +128,17 @@ class ActivitiesController < ApplicationController
         end
         return false
     end
+	
+	def add_photo
+		activity_id = params[:activity_id]
+		user_id = params[:user_id]
+		url = params[:photo_url]
+		
+		activity = Activity.find_by_id(activity_id)
+		activity.add_photo(user_id, url)
+		
+		render :json => activity
+	end
 
 end
 

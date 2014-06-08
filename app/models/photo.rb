@@ -1,4 +1,6 @@
 class Photo < ActiveRecord::Base
-  belongs_to :activity
-  belongs_to :user
+	attr_accessible :user_id, :activity_id, :url
+	
+	belongs_to :activity
+	belongs_to :user
 end

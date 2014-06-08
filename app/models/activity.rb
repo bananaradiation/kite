@@ -72,5 +72,9 @@ class Activity < ActiveRecord::Base
 			:user_id => uid
 		})
 	end
+	
+	def get_photos
+		return Photo.where({:activity_id=>self.id})
+	end
 
 end

@@ -6,7 +6,7 @@ class ActivitySerializer < ActiveModel::Serializer
     end
 
     def photos
-		photos = Photo.where({:activity_id => object.id})
+		photos = Photo.where({:activity_id => object.id}).order('id ASC')
 		
 		data = []
 		photos.each do |photo|

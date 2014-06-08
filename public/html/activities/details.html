@@ -57,13 +57,20 @@
                             </div>
                             <hr>
                             <div class="col-xs-12 img-row">
-                                    <img class="img-thumbnail" src="{{activity.photos[0].url}}"/>
-                                    <img class="img-thumbnail" src="{{activity.photos[1].url}}"/>
-                                    <img class="img-thumbnail" src="{{activity.photos[2].url}}"/>
-                                    <img class="img-thumbnail" src="{{activity.photos[3].url}}"/>
+								<img class="img-thumbnail" style="margin:0 5px;" ng-repeat="photos in activity.photos" ng-src="{{photos.url}}">
                             </div>
                             <div class="col-xs-12">
-                                <button class="btn btn-primary pull-right">Upload Image</button>
+								 <div id="filepickerinput">
+									<div 	filepicker path="/s3ServerPath/" 
+											pickerclass="btn btn-default" 
+											class="pull-right"
+											container="Mys3Bucket" 
+											multiple="false" 
+											mimetype="image/jpeg" 
+											callback="activity.add_image(0);">
+												Add Photo
+									</div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <hr>
