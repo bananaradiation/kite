@@ -22,7 +22,8 @@
                     <div class="row text-center upvote-inner">
                         <div class="col-xs-12 pull-right">
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg vote_selected"
+                                <button class="btn btn-default btn-lg"
+										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_up(activity.id)">
 											<i style="color:green" class="glyphicon glyphicon-thumbs-up"></i></button>
@@ -31,7 +32,8 @@
                                 <span class="label">{{activity.avg_vote}}</span>
                             </div>
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg vote_selected" 
+                                <button class="btn btn-default btn-lg" 
+										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_down(activity.id)">
 											<i style="color:red" class="glyphicon glyphicon-thumbs-down"></i></button>
