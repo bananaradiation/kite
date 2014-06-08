@@ -153,6 +153,9 @@ h4, h5, h6, p {
     top: 40px !important;
     left: 40px !important;
 }
+	.didit.completed {
+		background-color: yellow !important;
+	}
 
 .panel-login{
     background-color: rgba(0, 0, 0, 0.2) !important;

@@ -86,7 +86,7 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 		// go to single activity detail page
         if ($routeParams.id != null) {
 			$scope.activity = {map: {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14}};
-            ActivitiesSvc.resources.get_activity({activity_id:$routeParams.id}).
+            ActivitiesSvc.resources.get_activity({activity_id:$routeParams.id, user_id:userID}).
             $promise.then(function(response) {
                 $scope.activity = response.activity;
 				$scope.activity.map = {center: {latitude:32.8800604, longitude:-117.2340135}, draggable: false, zoom:14};
@@ -106,6 +106,25 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
         else {
             $scope.activity_data = ActivitiesSvc.resources.get_activities({user_id:userID});
         }
+		
+		//Complete activity
+		$scope.complete_activity = function(activity_id) {
+			ActivitiesSvc.resources.complete_activity({activity_id:activity_id, user_id:userID}).
+			$promise.then(function(response) {
+				if ($scope.activity_data != null) {
+					for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
+						if ($scope.activity_data.activities[ndx].id==response.activity.id) {
+							$scope.activity_data.activities[ndx] = response.activity;
+							break;
+						}
+					}
+				} else {
+					$scope.activity = response.activity;
+				}
+			}, function(error) {
+				console.log(error);
+			});
+		}
 		
         $scope.create_activity = {
 			categories: ActivitiesSvc.get_categories(),

@@ -23,7 +23,8 @@ KiteServices.factory('ActivitiesSvc', ['$resource', 'DataSvc',
 				get_activities: {method:'GET', url:'activities/get_activities', isArray:false},
                 get_activity: {method:'GET', url:'activities/get_activity', isArray:false},
                 vote_on: {method:'POST', url:'activities/vote_on', isArray:false},
-                add_activity: {method:'POST', url:'activities/add_activity', isArray:false}
+                add_activity: {method:'POST', url:'activities/add_activity', isArray:false},
+				complete_activity: {method:'POST', url:'activities/complete_activity', isArray:false}
 			})
 		}
 	}

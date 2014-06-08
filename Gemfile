@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'composite_primary_keys'
 gem 'thin'
+gem 'protected_attributes'
 
 gem 'active_model_serializers'
 

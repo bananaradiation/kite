@@ -16,6 +16,8 @@ class Activity < ActiveRecord::Base
     has_many :photos
     belongs_to :category
     belongs_to :user
+	
+	attr_accessor :viewer
 
     def self.getActivity(activity)
         @activity = Activity.find(activity)

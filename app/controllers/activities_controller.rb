@@ -54,7 +54,11 @@ class ActivitiesController < ApplicationController
     # user_id, category_id        //filter on category or user ID if relevant
     # Returns: activities[activity]
     def get_activities
+		viewer = nil
+		viewer = User.find_by_id(params[:user_id]) if (params.has_key?(:user_id))
+		
         @activities = Activity.getActivitiesBy2(params[:category_id], params[:user_id])
+		(0...@activities.length).each {|ndx| @activities[ndx].viewer = viewer}
         render :json => @activities
     end
 
@@ -63,7 +67,12 @@ class ActivitiesController < ApplicationController
     # Params: activity_id
     # Returns: activity
     def get_activity
+		viewer = nil
+		viewer = User.find_by_id(params[:user_id]) if (params.has_key?(:user_id))
+		
         @activity = Activity.find(params[:activity_id])
+		@activity.viewer = viewer if (!@activity.nil?)
+		
         render :json => @activity
     end
 
@@ -87,11 +96,20 @@ class ActivitiesController < ApplicationController
     # Params: user_id, activity_id
     # Returns:success
     def complete_activity
-        @status = ActivityStatus.new(:user => params[:user_id], :activity => params[:activity_id], :status => @@COMPLETE)
-        if @status.save!
-            return true
-        end
-        return false
+		cond = {:user_id => params[:user_id], :activity_id => params[:activity_id], :status => @@COMPLETE}
+		existing = ActivityStatus.where(cond)
+		activity = Activity.find_by_id(params[:activity_id])
+		activity.viewer = User.find_by_id(params[:user_id])
+		
+		if (existing.empty?)
+			ac_status = ActivityStatus.create(cond)
+			render :json => activity and return
+		else
+			existing.first.delete
+			render :json => activity and return
+		end
+		
+        render :text=>'There was an error marking this activity as complete.', :status=>:service_unavailable
     end
 
 

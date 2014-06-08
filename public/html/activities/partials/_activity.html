@@ -9,7 +9,9 @@
         <div class="row panel-item">
             <div>
                 <div class="col-xs-6 col-md-8 no-border panel-item">
-                    <button class="btn btn-warning didit">
+                    <button	class="btn btn-warning didit" 
+							ng-class="{completed:(activity.completed)}"
+							ng-click="complete_activity(activity.id)">
                         <i class="glyphicon glyphicon-star" style="color:yellow">
                         </i>
                         <p>I did it</p>

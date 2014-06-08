@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
-    attributes :id, :name, :location, :description, :category, :photos, :num_votes, :avg_vote
+    attributes :id, :name, :location, :description, :category, :photos, :num_votes, :avg_vote, :completed
 
     def category
         CategorySerializer.new(object.category)
@@ -20,6 +20,13 @@ class ActivitySerializer < ActiveModel::Serializer
 		
 		return data
     end
+	
+	def completed
+		return nil if (object.viewer.nil?)
+		
+		as = ActivityStatus.where({:activity_id=>object.id, :user_id=>object.viewer.id, :status=>1})
+		return !as.empty?
+	end
 
     # def num_votes
     #     return 123
