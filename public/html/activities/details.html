@@ -12,6 +12,7 @@
                         <div>
                             <div class="col-xs-6 col-md-8 no-border panel-item">
                                 <button	class="btn btn-warning didit" 
+										ng-show="get_user()!=null"
 										ng-class="{completed:(activity.completed)}"
 										ng-click="complete_activity(activity.id)">
                                     <i class="glyphicon glyphicon-star" style="color:yellow">
@@ -23,7 +24,9 @@
                                 <div class="row text-center upvote-inner">
                                     <div class="col-md-6 pull-right">
                                         <div class="col-xs-12">
-                                            <button class="btn btn-default btn-lg" ng-click="vote.vote_up(activity.id)">
+                                            <button	class="btn btn-default btn-lg" 
+													ng-disabled="get_user()==null"
+													ng-click="vote.vote_up(activity.id)">
 												<i style="color:green" class="glyphicon glyphicon-thumbs-up" ></i>
 											</button>
                                         </div>
@@ -31,7 +34,9 @@
                                             <span class="label">{{activity.avg_vote}}</span>
                                         </div>
                                         <div class="col-xs-12">
-                                            <button class="btn btn-default btn-lg" ng-click="vote.vote_down(activity.id)">
+                                            <button class="btn btn-default btn-lg" 
+													ng-disabled="get_user()==null"
+													ng-click="vote.vote_down(activity.id)">
 												<i style="color:red" class="glyphicon glyphicon-thumbs-down"></i>
 											</button>
                                         </div>
