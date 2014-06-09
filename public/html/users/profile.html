@@ -60,19 +60,22 @@
 
 
             <!-- Completed Activities list begin -->
-                <div class="tab-content">
-                    <div class="tab-pane active" id="home">
-                        <div class="container">
-                          <!-- Main component for a primary marketing message or call to action -->
-                            <div class="row">
-                                <div ng-repeat="activity in user.completed">
-                                    <ng-include src="'html/activities/partials/_activity.html'"></ng-include>
-
-                                </div>
+			<div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="container" id="main-content">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6" ng-repeat="completed in user.completed">
+								<a href="#!/activities/{{completed.activity.id}}">
+									<img alt="100x100" ng-src="{{completed.activity.photos[0].url}}" class="badge-img">
+								</a>
                             </div>
                         </div>
                     </div>
-                <!-- Completed Activities list end -->
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+            </div>
+			<!-- Completed Activities list end -->
 
         </div>
     </div>

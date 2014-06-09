@@ -10,7 +10,12 @@ class UserSerializer < ActiveModel::Serializer
     end
 
     def completed
-		return []
+		completed = []
+		ActivityStatus.where({:user_id=>object.id, :status=>1}).each do |activity_status|
+			completed.push(ActivitySerializer.new(activity_status.activity))
+		end
+		
+		return completed
         #ActiveModel::ActivitySerializer.root = false
         #return [ActivitySerializer.new(Activity.first), ActivitySerializer.new(Activity.last)]
     end

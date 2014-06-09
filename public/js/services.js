@@ -34,7 +34,11 @@ KiteServices.factory('ActivitiesSvc', ['$resource', 'DataSvc',
 //Handle users APIs
 KiteServices.factory('UsersSvc', ['$resource', 'AuthSvc',
     function($resource) {
-
+		return {
+			resources: $resource(null, {}, {
+				get_profile: {method:'GET', url:'users/get_profile', isArray:false}
+			})
+		}
     }
 ]);
 

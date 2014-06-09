@@ -171,7 +171,22 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 
 KiteControllers.controller('UsersCtrl',['$scope', '$routeParams', 'UsersSvc',
     function($scope, $routeParams, UsersSvc) {
-
+		var uid = null;
+		if ($scope.get_user()!=null) uid = $scope.get_user().id;
+		
+		$scope.user_profile = {
+			get_user: (function() {
+				if ($routeParams.id==0) {
+					UsersSvc.resources.get_profile({id:uid})
+					.$promise.then(function(response) {
+						$scope.user = response.user;
+						console.log(response);
+					}, function(error) {
+					});
+				}
+			})(),
+		}
+		console.log($routeParams.id)
     }
 ])
 
