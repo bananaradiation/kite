@@ -1,6 +1,8 @@
 class Vote < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :activity
+	attr_accessible :user_id, :activity_id, :score
+
+	belongs_to :user
+	belongs_to :activity
   
     def self.hasVoted?(user_id, activity_id)
         @vote = Vote.where({:user_id => user_id, :activity_id => activity_id})

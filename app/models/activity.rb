@@ -11,6 +11,8 @@
 
 
 class Activity < ActiveRecord::Base
+	attr_accessible :user_id, :name, :description, :category, :location
+	
     has_many :comments
     has_many :votes
     has_many :photos
