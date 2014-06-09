@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
-    attributes :id, :name, :location, :description, :category, :photos, :num_votes, :avg_vote, :completed, :vote
+    attributes :id, :name, :location, :description, :category, :photos, :num_votes, :avg_vote, :completed, :vote, :award
 
     def category
         CategorySerializer.new(object.category)
@@ -34,6 +34,14 @@ class ActivitySerializer < ActiveModel::Serializer
 		vote = Vote.where({:activity_id=>object.id, :user_id=>object.viewer.id}).first
 		return nil if (vote.nil?)
 		return vote.score
+	end
+	
+	def award
+		return nil if (object.viewer.nil?)
+		award = UserBadge.award_badge(object.viewer.id, :welcome)
+		return nil if (award.nil?)
+
+		return award.badge.name
 	end
 
     # def num_votes

@@ -1,12 +1,14 @@
 class UserSerializer < ActiveModel::Serializer
-    attributes :id, :name, :badges, :toDo, :completed
+    attributes :id, :name, :badges, :completed
 
     def badges
-        return [{:href => 'img/Infinity-Loop.png'},{:href => 'img/Compas.png'} ]
-    end
-
-    def toDo
-         return []
+		user_badges = UserBadge.where({:user_id=>object.id})
+		badges = []
+		user_badges.each do |user_badge|
+			badges.push(user_badge.badge.name)
+		end
+		
+		return badges
     end
 
     def completed
@@ -16,8 +18,5 @@ class UserSerializer < ActiveModel::Serializer
 		end
 		
 		return completed
-        #ActiveModel::ActivitySerializer.root = false
-        #return [ActivitySerializer.new(Activity.first), ActivitySerializer.new(Activity.last)]
     end
-
 end

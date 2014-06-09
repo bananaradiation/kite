@@ -34,8 +34,62 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="container" id="main-content">
                         <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6" ng-repeat="badge in user.badges">
-                                <img alt="100x100" height=100px" width="100px" ng-src="{{badge.href}}" class="badge-img img-circle">
+							<!-- Welcome -->
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('WELCOME')>-1)?'img/kite.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<!-- Activity -->
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('ACTIVITY')>-1)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<!-- Art -->
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('ART')>-1)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<!-- Food -->
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('FOOD')>-1)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+                        </div>
+						
+						<div class="row">
+							<!-- Music -->
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('MUSIC')>-1)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<!-- Sights -->
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(user.badges.indexOf('SIGHTS')>-1)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+                        </div>
+						
+						<div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
+                            </div>
+							
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                <img alt="100x100" height=100px" width="100px" ng-src="{{(1==0)?'img/Watches.png':'img/Question.png'}}" class="badge-img img-circle">
                             </div>
                         </div>
                     </div>
@@ -44,7 +98,6 @@
             </div>
         </div>
         <!--Badges End-->
-
 
         <div class="row top-buffer">
             <div class="row">
