@@ -166,6 +166,17 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 				$scope.create_activity.data.photo_url = filepicker_callback[0].url;
 			}
         }
+		
+		//Fancybox hacks
+		var fancybox = {
+			initialize: (function() {
+				$.noConflict();
+				$(".fancybox").fancybox({
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+			})()
+		}
 	}
 ])
 
