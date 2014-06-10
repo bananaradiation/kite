@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.4 */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css */
 
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.3 */
@@ -317,7 +319,7 @@ h4, h5, h6, p {
 
 .panel-footer row{
     padding: 0px;
-    margin: 0px;    
+    margin: 0px;
 }
 
 .fg-panel .panel-footer p{
@@ -340,5 +342,18 @@ h4, h5, h6, p {
     background-image:none;
     padding: 10px;
 }
+
+.location-text{
+    font-size: 10px;
+    text-align: left;
+    overflow: hidden !important;
+    height:40px
+}
+
+.fg-panel .panel-heading h3 {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
 
 }
