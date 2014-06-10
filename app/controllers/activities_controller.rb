@@ -105,11 +105,9 @@ class ActivitiesController < ApplicationController
 		if (existing.empty?)
 			ac_status = ActivityStatus.create(cond)
 			badge_sym = activity.category.description.downcase.to_sym
-			userbadge = UserBadge.award_badge_fake(params[:user_id], badge_sym)
+			userbadge = UserBadge.award_badge(params[:user_id], badge_sym)
 
 			ac_data = JSON.parse(ActivitySerializer.new(activity).to_json)
-			puts 123123
-			puts ac_data.inspect
 			ac_data['activity']['award'] = userbadge.badge.name
 			#activity_json.award = 
 			
