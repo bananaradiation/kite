@@ -9,20 +9,23 @@
         <div class="row panel-item">
             <div>
                 <div class="col-xs-6 col-md-8 no-border panel-item">
-                    <button	class="btn btn-warning didit" 
-							ng-show="get_user()!=null"
-							ng-class="{completed:(activity.completed)}"
-							ng-click="complete_activity(activity.id)">
-                        <i class="glyphicon glyphicon-star" style="color:yellow">
-                        </i>
-                        <p>I did it</p>
-                    </button>
+                    
                 </div>
                 <div class="col-xs-6 col-md-4 upvote-panel panel-item">
                     <div class="row text-center upvote-inner">
                         <div class="col-xs-12 pull-right">
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg"
+                                <button class="btn btn-warning didit" 
+                                        ng-show="get_user()!=null"
+                                        ng-class="{completed:(activity.completed)}"
+                                        ng-click="complete_activity(activity.id)">
+                                    <i class="glyphicon glyphicon-star" style="color:yellow">
+                                    </i>
+                                    <span>I did it</span>
+                                </button>
+                            </div>
+                            <div class="col-xs-12">
+                                <button class="btn btn-default btn-lg upvote"
 										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_up(activity.id)">
@@ -32,7 +35,7 @@
                                 <span class="label">{{activity.avg_vote}}</span>
                             </div>
                             <div class="col-xs-12">
-                                <button class="btn btn-default btn-lg" 
+                                <button class="btn btn-default btn-lg downvote" 
 										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_down(activity.id)">
@@ -48,7 +51,11 @@
             <div class="row">
                 <div class="col-xs-12">
                         <p>{{activity.description}}</p>
-						<p>@{{activity.location}}</p>
+                </div>
+				<div class="col-xs-6">
+                		<p>@{{activity.location}}</p>
+                </div>
+                <div class="col-xs-6">
                         <a href="/#!/activities/{{activity.id}}" class="btn btn-info">More<i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
             </div>
