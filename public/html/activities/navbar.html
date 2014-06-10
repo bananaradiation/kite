@@ -1,8 +1,9 @@
 <!-- Nav tabs -->
 <ul class="nav nav-pills">
-	<li ng-class="{active: category.selected==0}"><a ng-click="category.selected=0" data-toggle="tab">All</a></li>
+	<li ng-class="{active: category.selected==0}" style="cursor:pointer"><a ng-click="category.selected=0" data-toggle="tab">All</a></li>
 	<li	ng-repeat="cat in categories.categories"
-		ng-class="{active: category.selected==cat.id}">
+		ng-class="{active: category.selected==cat.id}"
+		style="cursor:pointer">
 			<a ng-click="category.selected=cat.id" data-toggle="tab">{{cat.name}}</a>
 	</li>
 </ul>
