@@ -1,3 +1,9 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.5 */
+
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.4 */
+
+/* @override http://cse210-kite.herokuapp.com/css/style.css */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.3 */
 
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.0.1 */
@@ -44,6 +50,11 @@ h4, h5, h6, p {
 
 .nav-pills li a {
     color: #882bdf !important;
+}
+
+div.fancybox-desktop {
+    color: white !important;
+    background-color: #000000 !important;
 }
 
 .bg-panel {
@@ -97,15 +108,6 @@ h4, h5, h6, p {
     border-color: #000000 !important;
 }
 
-.fg-panel .panel-footer a{
-    float: right;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color:transparent;
-    background-image:none;
-}
-
 .img-row{
     margin-bottom: 10px;
 }
@@ -147,15 +149,9 @@ h4, h5, h6, p {
     background-color: #ffffff !important;
 }
 
-.didit{
-    padding: 30px !important;
-    position:relative;
-    top: 40px !important;
-    left: 40px !important;
+.didit.completed {
+    background-color: yellow !important;
 }
-	.didit.completed {
-		background-color: yellow !important;
-	}
 
 .panel-login{
     background-color: rgba(0, 0, 0, 0.2) !important;
@@ -171,13 +167,13 @@ h4, h5, h6, p {
 .panel-heading h3 {
     background-image: none !important;
     margin: 10px 0;
+    text-align: center;
 }
 
 .panel-default .activity-body{
     padding:0;
     margin:0;
-    background-color:black;
-    background-size: 100% auto;
+    background-size: 100% 100%;
 }
 
 .panel-default .panel-body .panel-item{
@@ -218,9 +214,9 @@ h4, h5, h6, p {
     background-image:none;
     padding: 40px 20px;
 }
-	.upvote-inner button.selected {
-		background-color: white !important;
-	}
+    .upvote-inner button.selected {
+        background-color: white !important;
+    }
 
 #map-canvas{
     padding: 0px;
@@ -283,10 +279,6 @@ h4, h5, h6, p {
     height: 125px;
 }
 
-}
-
-@media (max-width: 450px) {
-
 
 
 h1, h2, h3, h4, h5, h6, p, label {
@@ -326,7 +318,7 @@ h4, h5, h6, p {
 
 .panel-footer row{
     padding: 0px;
-    margin: 0px;    
+    margin: 0px;
 }
 
 .fg-panel .panel-footer p{
@@ -337,4 +329,28 @@ h4, h5, h6, p {
 .panel-footer img.img-thumbnail{
     height:50px;
     width:50px; 
+}
+
+
+.upvote-inner button {
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    text-shadow: 0 0 0 black;
+    background-color:transparent;
+    background-image:none;
+    padding: 10px;
+}
+
+.location-text{
+    font-size: 10px;
+    text-align: left;
+    overflow: hidden !important;
+    height:40px
+}
+
+.panel-heading h3 {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
 }

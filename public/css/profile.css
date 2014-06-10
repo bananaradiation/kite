@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/profile.css */
+
 .avatar {
     padding: 10px;
     border: 3px solid rgb(230, 230, 230);
@@ -44,6 +46,7 @@
     max-width: 696px;
     text-transform: uppercase;
     text-align: left;
+    color: white;
 }
 
 #wrap > .container {
@@ -65,3 +68,5 @@
 #main-content > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
     float:none;
     display:inline-block
+    }
+}
