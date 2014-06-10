@@ -37,7 +37,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
                             activity_id:activity_id,
                             user_id:userID
 					}).$promise.then(function(response) {
-						console.log(response);
 						if ($scope.activity != null) $scope.activity = response.activity;
 						else if ($scope.activity_data != null) {
 							for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
@@ -84,6 +83,7 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
                     return true
                 }
                 else {
+					console.log(r);
                     return (r.category.category.id==$scope.category.selected)
                 }
             },
@@ -142,7 +142,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 		$scope.complete_activity = function(activity_id) {
 			ActivitiesSvc.resources.complete_activity({activity_id:activity_id, user_id:userID}).
 			$promise.then(function(response) {
-				console.log(response);
 				if ($scope.activity_data != null) {
 					for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
 						if ($scope.activity_data.activities[ndx].id==response.activity.id) {
@@ -186,7 +185,6 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 					$location.path('/');
 				}, function(error) {
 				});
-                console.log($scope.create_activity)
             },
 			init_filepicker: (function() {
 				var apiKey = "AI1Xy0rGrRQSx7W6sJbUHz";
@@ -221,13 +219,11 @@ KiteControllers.controller('UsersCtrl',['$scope', '$routeParams', 'UsersSvc',
 					UsersSvc.resources.get_profile({id:uid})
 					.$promise.then(function(response) {
 						$scope.user = response.user;
-						console.log(response);
 					}, function(error) {
 					});
 				}
 			})(),
 		}
-		console.log($routeParams.id)
     }
 ])
 
@@ -241,7 +237,6 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', '$location', 'A
             login:function() {
                 AuthSvc.resources.login($scope.login.credentials).$promise
                     .then(function(response) {
-						console.log(response.user);
                         AuthSvc.store_user(response.user);
 						$location.path('/');
                     }, function(error) {
@@ -254,7 +249,6 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', '$location', 'A
 			signup:function() {
 				AuthSvc.resources.signup($scope.login.credentials).$promise
                     .then(function(response) {
-						console.log(response.user);
                         AuthSvc.store_user(response.user);
 						$location.path('/');
                     }, function(error) {
