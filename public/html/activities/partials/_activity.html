@@ -15,13 +15,12 @@
                     <div class="row text-center upvote-inner">
                         <div class="col-xs-12 pull-right">
                             <div class="col-xs-12">
-                                <button class="btn btn-warning didit" 
+                                <button class="btn btn-warning btn-lg didit" 
                                         ng-show="get_user()!=null"
                                         ng-class="{completed:(activity.completed)}"
                                         ng-click="complete_activity(activity.id)">
                                     <i class="glyphicon glyphicon-star" style="color:yellow">
                                     </i>
-                                    <span>I did it</span>
                                 </button>
                             </div>
                             <div class="col-xs-12">
@@ -29,7 +28,8 @@
 										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_up(activity.id)">
-											<i style="color:green" class="glyphicon glyphicon-thumbs-up"></i></button>
+											<i style="color:green" class="glyphicon glyphicon-thumbs-up"></i>
+                                </button>
                             </div>
                             <div class="col-xs-12">
                                 <span class="label">{{activity.avg_vote}}</span>
@@ -39,7 +39,8 @@
 										ng-class="{selected:(activity.vote<0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_down(activity.id)">
-											<i style="color:red" class="glyphicon glyphicon-thumbs-down"></i></button>
+											<i style="color:red" class="glyphicon glyphicon-thumbs-down"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -49,10 +50,10 @@
         </div>
         <div class="panel-footer">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 description">
                         <p>{{activity.description}}</p>
                 </div>
-				<div class="col-xs-6">
+				<div class="col-xs-6 location-text">
                 		<p>@{{activity.location}}</p>
                 </div>
                 <div class="col-xs-6">
