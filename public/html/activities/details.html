@@ -57,7 +57,11 @@
                             </div>
                             <hr>
                             <div class="col-xs-12 img-row">
-								<img class="img-thumbnail" style="margin:0 5px;" ng-repeat="photos in activity.photos" ng-src="{{photos.url}}">
+								<span ng-repeat="photo in activity.photos">
+									<a class="fancybox" rel="gallery" href="{{photo.url}}+j.jpg">
+										<img class="img-thumbnail" style="margin:0 5px;" ng-src="{{photo.url}}+j.jpg">
+									</a>
+								</span>
                             </div>
                             <div class="col-xs-12">
 								 <div id="filepickerinput">

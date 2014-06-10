@@ -16,6 +16,15 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
     function($scope, $routeParams, $location, ActivitiesSvc, GoogleSvc) {
 		var userID = null;
 		if ($scope.get_user()!=null) userID = $scope.get_user().id;
+		
+		$scope.award = null;
+		/*
+		$scope.$watch('award', function(award) {
+			if (award==null) return;
+			console.log(award);
+			$.fancybox($('#'+award));
+		})
+		*/
 
         $scope.vote = {
             check_votability:function() {
@@ -113,22 +122,42 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
         }
         // show activities list
         else {
-            $scope.activity_data = ActivitiesSvc.resources.get_activities({user_id:userID});
+            ActivitiesSvc.resources.get_activities({user_id:userID}).
+			$promise.then(function(response) {
+				$scope.activity_data = response;
+				for (var ndx=0; ndx<response.activities.length; ndx++) {
+					var activity = response.activities[ndx];
+					$scope.award = activity.award;
+					
+					if ($scope.award != null) {
+						$.fancybox($('#'+$scope.award));
+					}
+				}
+			}, function(error) {
+			});
         }
 		
 		//Complete activity
 		$scope.complete_activity = function(activity_id) {
 			ActivitiesSvc.resources.complete_activity({activity_id:activity_id, user_id:userID}).
 			$promise.then(function(response) {
+				console.log(response);
 				if ($scope.activity_data != null) {
 					for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {
 						if ($scope.activity_data.activities[ndx].id==response.activity.id) {
 							$scope.activity_data.activities[ndx] = response.activity;
+							
+							$scope.award = response.activity.award;
+					
 							break;
 						}
 					}
 				} else {
 					$scope.activity = response.activity;
+					$scope.award = response.activity.award;
+				}
+				if ($scope.award != null) {
+					$.fancybox($('#'+$scope.award));
 				}
 			}, function(error) {
 				console.log(error);
@@ -166,6 +195,17 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
 				$scope.create_activity.data.photo_url = filepicker_callback[0].url;
 			}
         }
+		
+		//Fancybox hacks
+		var fancybox = {
+			initialize: (function() {
+				if ($.fancybox==null) $.noConflict();
+				$(".fancybox").fancybox({
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+			})()
+		}
 	}
 ])
 

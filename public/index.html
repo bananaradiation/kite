@@ -14,12 +14,30 @@
 
 		<!-- Angular Google Map -->
 		<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
-		<script src="js/underscore-min.js"></script>
+		<script src="js/underscore.min.js"></script>
 		<script src="js/angular-google-maps.min.js"></script>
 
 		<!-- Angular Disqus -->
 		<script src="js/angular-disqus.min.js"></script>
 		
+		<!-- Fancybox -->
+		<!-- Add jQuery library -->
+		<script type="text/javascript" src="js/fancybox/lib/jquery-1.10.1.min.js"></script>
+		<!-- Add mousewheel plugin (this is optional) -->
+		<script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<!-- Add fancyBox main JS and CSS files -->
+		<script type="text/javascript" src="js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+		<link rel="stylesheet" type="text/css" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+		<!-- Add Button helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+		<script type="text/javascript" src="js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+		<!-- Add Thumbnail helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+		<script type="text/javascript" src="js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+		<!-- Add Media helper (this is optional) -->
+		<script type="text/javascript" src="js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	
+		<!-- Filepicker.io -->
 		<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
 		<script src="js/angular-filepicker.js"></script>	
 
@@ -73,6 +91,7 @@
 
 	<body ng-controller="AppRootCtrl">
 		<ng-include src="'html/header.html'"></ng-include>
+		<ng-include src="'html/awards.html'"></ng-include>
 
 		<div class="" ng-view=""></div>
 		<script>
