@@ -37,6 +37,7 @@ KiteControllers.controller('ActivitiesCtrl', ['$scope', '$routeParams', '$locati
                             activity_id:activity_id,
                             user_id:userID
 					}).$promise.then(function(response) {
+						console.log(response);
 						if ($scope.activity != null) $scope.activity = response.activity;
 						else if ($scope.activity_data != null) {
 							for (var ndx=0; ndx<$scope.activity_data.activities.length; ndx++) {

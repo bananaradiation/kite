@@ -25,14 +25,14 @@
                             </div>
                             <div class="col-xs-12">
                                 <button class="btn btn-default btn-lg upvote"
-										ng-class="{selected:(activity.vote<0)}"
+										ng-class="{selected:(activity.vote>0)}"
 										ng-disabled="get_user()==null"
 										ng-click="vote.vote_up(activity.id)">
 											<i style="color:green" class="glyphicon glyphicon-thumbs-up"></i>
                                 </button>
                             </div>
                             <div class="col-xs-12">
-                                <span class="label">{{activity.avg_vote}}</span>
+                                <span class="label">{{activity.rating}}</span>
                             </div>
                             <div class="col-xs-12">
                                 <button class="btn btn-default btn-lg downvote" 
