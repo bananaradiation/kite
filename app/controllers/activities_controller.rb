@@ -108,7 +108,7 @@ class ActivitiesController < ApplicationController
 			userbadge = UserBadge.award_badge(params[:user_id], badge_sym)
 
 			ac_data = JSON.parse(ActivitySerializer.new(activity).to_json)
-			ac_data['activity']['award'] = userbadge.badge.name
+			ac_data['activity']['award'] = userbadge.badge.name if (!userbadge.nil?)
 			#activity_json.award = 
 			
 			render :json => ac_data.to_json and return
