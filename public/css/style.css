@@ -1,3 +1,5 @@
+/* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.5 */
+
 /* @override http://cse210-kite.herokuapp.com/css/style.css?v=1.1.4 */
 
 /* @override http://cse210-kite.herokuapp.com/css/style.css */
@@ -48,6 +50,11 @@ h4, h5, h6, p {
 
 .nav-pills li a {
     color: #882bdf !important;
+}
+
+div.fancybox-desktop {
+    color: white !important;
+    background-color: #000000 !important;
 }
 
 .bg-panel {
@@ -160,6 +167,7 @@ h4, h5, h6, p {
 .panel-heading h3 {
     background-image: none !important;
     margin: 10px 0;
+    text-align: center;
 }
 
 .panel-default .activity-body{
@@ -271,10 +279,6 @@ h4, h5, h6, p {
     height: 125px;
 }
 
-}
-
-@media (max-width: 450px) {
-
 
 
 h1, h2, h3, h4, h5, h6, p, label {
@@ -345,10 +349,8 @@ h4, h5, h6, p {
     height:40px
 }
 
-.fg-panel .panel-heading h3 {
+.panel-heading h3 {
     font-size: 18px;
     line-height: 21px;
     text-align: center;
-
-
 }

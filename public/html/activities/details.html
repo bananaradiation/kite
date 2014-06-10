@@ -26,7 +26,7 @@
                                             </button>
                                         </div>
                                         <div class="col-xs-12">
-                                            <button	class="btn btn-default btn-lg" 
+                                            <button	class="btn btn-default btn-lg upvote" 
 													ng-class="{selected:(activity.vote==1)}"
 													ng-disabled="get_user()==null"
 													ng-click="vote.vote_up(activity.id)">
@@ -38,7 +38,7 @@
                                             <span class="label">{{activity.avg_vote}}</span>
                                         </div>
                                         <div class="col-xs-12">
-                                            <button class="btn btn-default btn-lg" 
+                                            <button class="btn btn-default btn-lg downvote" 
 													ng-class="{selected:(activity.vote<0)}"
 													ng-disabled="get_user()==null"
 													ng-click="vote.vote_down(activity.id)">
@@ -55,7 +55,6 @@
                         <div class="row">
                             <div class="col-xs-12">
                                     <p>{{activity.description}}</p>
-									<p>@{{activity.location}}</p>
                             </div>
                             <hr>
                             <div class="col-xs-12 img-row">
@@ -80,6 +79,7 @@
                             </div>
                             <div class="col-xs-12">
                                 <hr>
+                                <p>@{{activity.location}}</p>
                                 <div class="well" id="map-canvas">
 									<google-map center="activity.map.center" zoom="activity.map.zoom">
 										<marker coords="activity.map.center"></marker>
