@@ -29,7 +29,7 @@ class Activity < ActiveRecord::Base
         if category != nil and user != nil
             Activity.where(:category_id => category, :user_id => user).order('rating DESC')
         else
-            Activity.all
+            Activity.all.order('rating DESC')
         end
 
     end 
