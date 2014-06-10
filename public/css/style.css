@@ -142,14 +142,9 @@ h4, h5, h6, p {
     background-color: #ffffff !important;
 }
 
-.didit{
-    font-size: 12px !important; 
-    clear: both;
+.didit.completed {
+    background-color: yellow !important;
 }
-    .didit.completed {
-        background-color: yellow !important;
-        color: !important;
-    }
 
 .panel-login{
     background-color: rgba(0, 0, 0, 0.2) !important;
