@@ -240,6 +240,7 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', '$location', 'A
             login:function() {
                 AuthSvc.resources.login($scope.login.credentials).$promise
                     .then(function(response) {
+						console.log(response.user);
                         AuthSvc.store_user(response.user);
 						$location.path('/');
                     }, function(error) {
@@ -247,6 +248,19 @@ KiteControllers.controller('AuthCtrl',['$scope', '$routeParams', '$location', 'A
                     })
             },
         }
+		
+		$scope.signup = {
+			signup:function() {
+				AuthSvc.resources.signup($scope.login.credentials).$promise
+                    .then(function(response) {
+						console.log(response.user);
+                        AuthSvc.store_user(response.user);
+						$location.path('/');
+                    }, function(error) {
+						alert(error.data);
+                    })
+			}
+		}
 
         $scope.logout = function() { AuthSvc.logout() }
     }

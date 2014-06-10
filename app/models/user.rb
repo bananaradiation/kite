@@ -9,6 +9,8 @@
 
 class User < ActiveRecord::Base
 
+	attr_accessible :email, :password, :name
+
 	@@SAVE = 2
     @@COMPLETE = 1
 

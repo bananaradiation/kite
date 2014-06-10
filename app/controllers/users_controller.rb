@@ -15,6 +15,25 @@ class UsersController < ApplicationController
 			render :json=>user
 		end
     end
+	
+	def signup
+		email = params[:email]
+		password = params[:password]
+		
+		user = User.where({:email=>email, :password=>password}).first
+		
+		if (user.nil?)
+			name_arr = email.split('@')
+			name_arr[0] = name_arr[0].capitalize
+			name_arr[1] = name_arr[1].split('.')[0].capitalize
+			name = name_arr.join(' ')
+			
+			user = User.create({:email=>email, :password=>password, :name=>name})
+			render :json=>user
+		else
+			render :text => 'User already exists.', :status=>:unauthorized and return
+		end
+	end
 
 	#Get user profile
     def get_profile
