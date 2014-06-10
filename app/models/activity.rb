@@ -27,7 +27,7 @@ class Activity < ActiveRecord::Base
     
     def self.getActivitiesBy2(category, user)
         if category != nil and user != nil
-            Activity.where(:category_id => category, :user_id => user)
+            Activity.where(:category_id => category, :user_id => user).order('rating DESC')
         else
             Activity.all
         end
